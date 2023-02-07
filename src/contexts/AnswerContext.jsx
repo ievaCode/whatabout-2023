@@ -1,43 +1,44 @@
 import { createContext, useState, useEffect } from "react";
 
-const QuestionContext = createContext();
+const AnswerContext = createContext();
 
-const QuestionProvider = ({ children }) => {
+const AnswerProvider = ({ children }) => {
 
-  const [questions, setQuestions] = useState([]);
+  const [answers, setAnswers] = useState([]);
 
-  const fetchQuestions = async () => {
-    const allQuestions = await fetch('http://localhost:5000/questions')
+  const fetchAnswers = async () => {
+    const allAnswers = await fetch('http://localhost:5000/answers')
       .then(res => res.json());
-    setQuestions(allQuestions);
+    console.log(allAnswers);
+    setAnswers(allAnswers);
   }
 
   useEffect(()=>{
-    fetchQuestions();
+    fetchAnswers();
   }, []);
 
 // CRUD functions
   let post = (data) => {
-    fetch('http://localhost:5000/questions', {
+    fetch('http://localhost:5000/answers', {
       method: "POST",
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify(data)
     })
   }
   let remove = (id) => {
-    fetch(`http://localhost:5000/questions/${id}`, {
+    fetch(`http://localhost:5000/answers/${id}`, {
       method: "DELETE"
     })
   }
   let updateWithPUT = (id, newDataObject) => {
-    fetch(`http://localhost:5000/questions/${id}`, {
+    fetch(`http://localhost:5000/answers/${id}`, {
       method: "PUT",
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify(newDataObject)
     })
   }
   let updateWithPATCH = (id, newData) => { 
-    fetch(`http://localhost:5000/questions/${id}`, {
+    fetch(`http://localhost:5000/answers/${id}`, {
       method: "PATCH",
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify(newData)
@@ -50,15 +51,15 @@ const QuestionProvider = ({ children }) => {
 
 
   return (
-    <QuestionContext.Provider
+    <AnswerContext.Provider
       value={{
-        questions
+        answers
       }}
     >
       {children}
-    </QuestionContext.Provider>
+    </AnswerContext.Provider>
   );
 }
 
-export { QuestionProvider };
-export default QuestionContext;
+export { AnswerProvider };
+export default AnswerContext;
