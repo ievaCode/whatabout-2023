@@ -1,3 +1,5 @@
+import UserContext from "../../contexts/UserContext";
+import { useContext } from "react";
 import { Link } from 'react-router-dom';
 
 import UserRegistration from './UserRegistration';
@@ -6,16 +8,20 @@ import UserNavigation from './UserNavigation';
 
 const Header = () => {
 
+  const { loggedInUser } = useContext(UserContext);
+
   return (
     <header className = "header">
       <div className="upperHeader">
-          <UserRegistration /> 
-          {/* <PublicRegistration /> */}
+        {loggedInUser ? 
+          <UserRegistration /> :
+          <PublicRegistration />
+        }
       </div>
       <div className="lowerHeader">
         <nav className="mainNavigation">
           <Link to="/">WHATABOUT</Link>
-          <UserNavigation /> 
+          {loggedInUser && <UserNavigation /> }
         </nav>
       </div>
     </header>
