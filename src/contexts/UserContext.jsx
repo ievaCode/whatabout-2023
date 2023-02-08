@@ -48,15 +48,14 @@ const UserProvider = ({ children }) => {
     .then(data => console.log(data));
   }
 
-  //onClick functions
-
-
   return (
     <UserContext.Provider
       value={{
         users,
+        setUsers,
         loggedInUser,
-        setLoggedInUser
+        setLoggedInUser,
+        post,
       }}
     >
       {children}
