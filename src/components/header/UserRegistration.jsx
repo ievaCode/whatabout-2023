@@ -14,16 +14,16 @@ const UserLoginMenu = () => {
 
   const logOutUser = () => {
     setLoggedInUser(null);
-    navigation('/');
+    navigation('/questions');
   }
 
   return (
     <div className="userLoginMenu">     
-      <Link to="/user-zone">
+      <Link to="/my-zone">
         <UserCard data = {loggedInUser} />
       </Link>
       <div className="registration loginButton" onClick={() => logOutUser()}>
-          <Link to='/'>Log out</Link>
+          <Link to='/questions'>Log out</Link>
       </div>
     </div>  
   );

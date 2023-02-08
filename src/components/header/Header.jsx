@@ -20,7 +20,7 @@ const Header = () => {
       </div>
       <div className="lowerHeader">
         <nav className="mainNavigation">
-          <Link to="/">WHATABOUT</Link>
+          <Link to="/questions">WHATABOUT</Link>
           {loggedInUser && <UserNavigation /> }
         </nav>
       </div>

@@ -1,17 +1,41 @@
 import * as Yup from 'yup';
 import { Formik, Form, Field } from 'formik';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { useNavigate } from "react-router-dom";
+
+import UserContext from "../../contexts/UserContext";
 
 const Register = () => {
 
-  //cia gal nereikia steito, o tik kintamojo
-  const [formInputs, setFormInputs] = useState({
-    email: '',
-    username: '',
-    imageUrl: '',
-    password1: '',
-    password2: '',
-  });
+  const [existingEmail, setExistingEmail] = useState(false);
+  const [notMatching, setNotMatching] = useState(false);
+  const { users, setUsers, post, setLoggedInUser } = useContext(UserContext);
+  
+  const navigation = useNavigate();
+
+  const handleSubmit = (values) => {
+    if(users.find(user => user.email === values.email)){
+      setExistingEmail(true);
+    } else if(values.password1 !== values.password2) {
+      setNotMatching(true);
+    } else {
+      let newUser = {
+        id: Date.now(),
+        username: values.username,
+        email: values.email,
+        password: values.password1,        
+        imageUrl: values.imageUrl,
+        likedQuestionIds: [],
+        dislikedQuestionIds: [],
+        likedAnswerIds: [],
+        dislikedAnswerIds: []        
+      };
+      setUsers([...users, newUser]);
+      post(newUser);
+      setLoggedInUser(newUser);
+      navigation('/questions');
+    }
+  }
 
   const validationSchema = Yup.object().shape({
     email: Yup.string()
@@ -32,14 +56,17 @@ const Register = () => {
 
   return (
     <div className="registration">
-      <Formik
-        initialValues={formInputs}
-        validationSchema={validationSchema}
-        onSubmit={values => {
-          console.log(values);
+      <Formik initialValues={{
+          email: '',
+          username: '',
+          imageUrl: '',
+          password1: '',
+          password2: '',
         }}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
       >
-        {({ errors, touched, /*isValidating, validateField, validateFormvalues, */ values, setValues }) => (
+        {({ errors, touched, values, setValues }) => (
           <Form>
             <div>
               <label>Email:
@@ -91,7 +118,9 @@ const Register = () => {
                 {errors.password2 && touched.password2 ? <span>{errors.password2}</span> : null}
               </label>
             </div>               
-            <button type="submit">Submit</button>
+            <button type="submit">Register</button>
+            {existingEmail && <span className="notification">*User with this e-mail already exists</span>}
+            {notMatching && <span className="notification">*Passwords do not match</span>}
           </Form>
         )}
       </Formik>
