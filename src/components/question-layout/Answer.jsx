@@ -16,7 +16,6 @@ const Question = ({answer, tagNumber}) => {
   return (
     <article style = {{border: "1px solid black"}} className="card question">
         <div className="answerTag">Answer {tagNumber}</div>
-        <span>id: {answer.id}</span> 
         <UserCard userData = {answerOwner}/>
         {loggedInUser && loggedInUser.id === answerOwner.id &&
             <>

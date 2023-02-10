@@ -22,7 +22,6 @@ const Question = ({question}) => {
 
   return (
     <article style = {{border: "1px solid black"}} className="card question">
-        <span>id: {question.id}</span>
         <div className="numberOfAnswers">
             <span>answers: {numberOfAnswers}</span>
         </div>
@@ -30,7 +29,7 @@ const Question = ({question}) => {
         {loggedInUser && loggedInUser.id === questionOwner.id &&
             <>
                 <div className="button editButton"><Link to={`/questions/edit-question/${question.id}`}>Edit my question</Link></div>
-                <button className="button deleteButton">Delete my question</button>          
+                <button className="button deleteButton" onClick = {()=> deleteQuestion(question.id)}>Delete my question</button>          
             </>        
         }
         <span className="date">{question.date}</span>

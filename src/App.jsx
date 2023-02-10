@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import NotFound from "./components/NotFound";
 import MyZone from "./components/my-zone/MyZone";
 import QuestionLayout from "./components/question-layout/QuestionLayout";
-import QuestionList from "./components/question-layout/QuestionList";
+import HomePage from "./components/question-layout/HomePage";
 import QuestionPage from "./components/question-layout/QuestionPage";
 import NewQuestion from "./components/question-layout/NewQuestion";
 import EditQuestion from "./components/question-layout/EditQuestion";
@@ -19,8 +19,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<QuestionLayout />}>
-        <Route index element={<QuestionList />} />
-        <Route path="/questions" element={<QuestionList />} />
+        <Route index element={<HomePage />} />
+        <Route path="/questions" element={<HomePage />} />
         <Route path="/questions/:id" element={<QuestionPage />} />
         <Route path="/questions/new-question" element={<NewQuestion />} />
         <Route path="/questions/edit-question/:id" element={<EditQuestion />} />

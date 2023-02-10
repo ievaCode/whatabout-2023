@@ -47,12 +47,26 @@ const QuestionProvider = ({ children }) => {
   }
   
   //onClick and other functions
-
+  const addNewQuestion = (newQuestion) => {
+    setQuestions([newQuestion, ...questions]);
+    post(newQuestion);
+  }  
+  const deleteQuestion = (id) => {
+    remove(id);
+    setQuestions(questions.filter(question => question.id !== id));
+  }
+  const updateQuestion = (id, updatedQuestion) => {
+    updateWithPATCH(id, updatedQuestion);
+    setQuestions(questions.map(question => question.id.toString() === id ? {...question, ...updatedQuestion} : question));
+  }
 
   return (
     <QuestionContext.Provider
       value={{
-        questions
+        questions,
+        addNewQuestion,
+        deleteQuestion,
+        updateQuestion
       }}
     >
       {children}
