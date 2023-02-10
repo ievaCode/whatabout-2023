@@ -1,15 +1,10 @@
-import { useContext } from "react";
 
-import UserContext from "../../../contexts/UserContext";
-
-const UserCard = () => {
-
-  const { loggedInUser } = useContext(UserContext);
+const UserCard = ({userData}) => {
 
     return (
       <div className="UserCard">
-        <img className="avatar" src={loggedInUser.imageUrl} alt="user avatar" />
-        <span className="username">{loggedInUser.username}</span>
+        <img style = {{width:"30px", height: "auto"}} className="avatar" src={userData.imageUrl} alt="user avatar" />
+        <span className="username">{userData.username}</span>
       </div>
     );
   }

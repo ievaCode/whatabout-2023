@@ -9,7 +9,6 @@ const AnswerProvider = ({ children }) => {
   const fetchAnswers = async () => {
     const allAnswers = await fetch('http://localhost:5000/answers')
       .then(res => res.json());
-    console.log(allAnswers);
     setAnswers(allAnswers);
   }
 

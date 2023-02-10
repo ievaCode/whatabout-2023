@@ -19,8 +19,8 @@ const UserLoginMenu = () => {
 
   return (
     <div className="userLoginMenu">     
-      <Link to="/my-zone">
-        <UserCard data = {loggedInUser} />
+      <Link to={`/my-zone/${loggedInUser.id}`}>
+        <UserCard userData = {loggedInUser} />
       </Link>
       <div className="registration loginButton" onClick={() => logOutUser()}>
           <Link to='/questions'>Log out</Link>

@@ -1,11 +1,15 @@
 import { Link } from 'react-router-dom';
+import { useContext } from "react";
+
+import UserContext from "../../contexts/UserContext";
 
 const UserNavigation = () => {
 
+  const { loggedInUser } = useContext(UserContext);
+
   return (
     <>
-      <Link to="/questions">Home</Link>
-      <Link to="/my-zone">My zone</Link>
+      <Link to={`/my-zone/${loggedInUser.id}`}>My zone</Link>
     </>
   );
 }
