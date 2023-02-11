@@ -14,6 +14,7 @@ const Question = ({question}) => {
 
   const { users, loggedInUser } = useContext(UserContext);
   const { editQuestion, deleteQuestion } = useContext(QuestionContext);
+  const { addNewAnswer } = useContext(AnswerContext);
   const { answers } = useContext(AnswerContext);
 
   const questionOwner = users.find(user => user.id === question.authorId);
@@ -43,7 +44,9 @@ const Question = ({question}) => {
             <Link className="questionHeading" to={`/questions/${question.id}`}>{question.question}</Link>
             <p className="questionText">{question.explanation}</p>      
         </div> 
-        {loggedInUser && <button className="button addAnswer">Add your answer</button>}
+        {loggedInUser && <div className="button addAnswer">
+            <Link to={`/questions/new-answer/${question.id}`}>Add Your answer</Link>
+        </div>}
     </article>
   );
 }

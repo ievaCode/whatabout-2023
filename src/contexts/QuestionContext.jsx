@@ -1,4 +1,5 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
+import AnswerContext from "./AnswerContext";
 
 const QuestionContext = createContext();
 
@@ -11,10 +12,10 @@ const QuestionProvider = ({ children }) => {
       .then(res => res.json());
     setQuestions(allQuestions);
   }
-
   useEffect(()=>{
     fetchQuestions();
   }, []);
+
 
 // CRUD functions
   let post = (data) => {
@@ -29,13 +30,6 @@ const QuestionProvider = ({ children }) => {
       method: "DELETE"
     })
   }
-  let updateWithPUT = (id, newDataObject) => {
-    fetch(`http://localhost:5000/questions/${id}`, {
-      method: "PUT",
-      headers: {'Content-type': 'application/json'},
-      body: JSON.stringify(newDataObject)
-    })
-  }
   let updateWithPATCH = (id, newData) => { 
     fetch(`http://localhost:5000/questions/${id}`, {
       method: "PATCH",
@@ -43,7 +37,6 @@ const QuestionProvider = ({ children }) => {
       body: JSON.stringify(newData)
     })
     .then(res => res.json())
-    .then(data => console.log(data));
   }
   
   //onClick and other functions
@@ -51,10 +44,15 @@ const QuestionProvider = ({ children }) => {
     setQuestions([newQuestion, ...questions]);
     post(newQuestion);
   }  
+
+  const { answers, deleteAnswer } = useContext(AnswerContext);  
   const deleteQuestion = (id) => {
+    const relevantAnswers = answers.filter(answer => answer.questionId === id);
+    relevantAnswers.forEach(answer => deleteAnswer(answer));  
     remove(id);
     setQuestions(questions.filter(question => question.id !== id));
   }
+
   const updateQuestion = (id, updatedQuestion) => {
     updateWithPATCH(id, updatedQuestion);
     setQuestions(questions.map(question => question.id.toString() === id ? {...question, ...updatedQuestion} : question));

@@ -58,17 +58,18 @@ const NewQuestion = () => {
                     value={values.question} 
                     onChange={(e)=>setValues({...values, question:e.target.value})}
                   />
-                  {errors.email && touched.email ? <span>{errors.question}</span> : null}
+                  {errors.question && touched.question ? <span>{errors.question}</span> : null}
                 </label>
               </div>
               <div>
                 <label>More detailed explanation (optional):
                   <Field 
+                    component="textarea"
                     name='explanation'
                     value={values.explanation} 
                     onChange={(e)=>setValues({...values, explanation:e.target.value})}
                   />
-                  {errors.username && touched.username ? <span>{errors.explanation}</span> : null}
+                  {errors.explanation && touched.explanation ? <span>{errors.explanation}</span> : null}
                 </label>
               </div>        
               <button type="submit">Publish question</button>
