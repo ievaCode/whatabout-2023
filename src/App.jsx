@@ -26,7 +26,7 @@ function App() {
         <Route path="/questions/:id" element={<QuestionPage />} />
         <Route path="/questions/new-question" element={<NewQuestion />} />
         <Route path="/questions/edit-question/:id" element={<EditQuestion />} />
-        <Route path="/questions/new-answer/:questionId" element={<NewAnswer />} />
+        <Route path="/questions/:questionId/new-answer" element={<NewAnswer />} />
         <Route path="/questions/edit-answer/:id" element={<EditAnswer />} />
       </Route>
       <Route path="/my-zone/:id" element={<MyZone />} />

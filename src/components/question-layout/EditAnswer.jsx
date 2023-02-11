@@ -23,7 +23,7 @@ const EditAnswer = () => {
             edited: dateNow,
           };
         updateAnswer(id, editedAnswer);
-        navigation('/questions');
+        navigation(-1);
       }
   
     const validationSchema = Yup.object().shape({

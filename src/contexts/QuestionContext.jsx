@@ -45,10 +45,10 @@ const QuestionProvider = ({ children }) => {
     post(newQuestion);
   }  
 
-  const { answers, deleteAnswer } = useContext(AnswerContext);  
+  // const { answers, deleteAnswer } = useContext(AnswerContext);  
   const deleteQuestion = (id) => {
-    const relevantAnswers = answers.filter(answer => answer.questionId === id);
-    relevantAnswers.forEach(answer => deleteAnswer(answer));  
+    // const relevantAnswers = answers.filter(answer => answer.questionId === id);
+    // relevantAnswers.forEach(answer => deleteAnswer(answer));  
     remove(id);
     setQuestions(questions.filter(question => question.id !== id));
   }

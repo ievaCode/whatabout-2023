@@ -1,0 +1,266 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "email": "lina@lina.lt",
+        "username": "Lina",
+        "password": "lina1234",
+        "imageUrl": "https://st2.depositphotos.com/4880869/7269/v/450/depositphotos_72691535-stock-illustration-low-poly-gecko.jpg",
+        "likedQuestionIds": [
+          2,
+          5
+        ],
+        "dislikedQuestionIds": [
+          6
+        ],
+        "likedAnswerIds": [
+          1,
+          2,
+          3,
+          9
+        ],
+        "dislikedAnswerIds": [
+          4
+        ]
+      },
+      {
+        "id": 2,
+        "email": "tomas@tomas.lt",
+        "username": "Tomas",
+        "password": "tomas1234",
+        "imageUrl": "https://thumbs.dreamstime.com/z/monkey-head-eyeglasses-vector-illustration-monkey-head-eyeglasses-vector-illustration-your-company-brand-165757316.jpg",
+        "likedQuestionIds": [
+          1,
+          3
+        ],
+        "dislikedQuestionIds": [],
+        "likedAnswerIds": [
+          5,
+          6,
+          8
+        ],
+        "dislikedAnswerIds": [
+          7
+        ]
+      },
+      {
+        "id": 3,
+        "username": "Ula",
+        "email": "ula@ula.lt",
+        "password": "ula1234",
+        "imageUrl": "https://cdn4.vectorstock.com/i/thumb-large/88/08/pug-dog-retro-sunset-vector-26288808.jpg",
+        "likedQuestionIds": [
+          2,
+          6
+        ],
+        "dislikedQuestionIds": [
+          1
+        ],
+        "likedAnswerIds": [
+          5,
+          6,
+          2
+        ],
+        "dislikedAnswerIds": [
+          7
+        ]
+      },
+      {
+        "id": 1675885991700,
+        "email": "domas@domas.lt",
+        "password": "domas1234",
+        "username": "dom",
+        "imageUrl": "https://wallpapercave.com/wp/wp8455564.jpg",
+        "likedQuestionIds": [],
+        "dislikedQuestionIds": [],
+        "likedAnswerIds": [],
+        "dislikedAnswerIds": []
+      },
+      {
+        "id": 1675889912289,
+        "username": "Meta",
+        "email": "meta@meta.lt",
+        "password": "meta1234",
+        "imageUrl": "https://i.pinimg.com/736x/30/ce/c2/30cec2b4ef71e4019e0e03ad48eda3d1.jpg",
+        "likedQuestionIds": [],
+        "dislikedQuestionIds": [],
+        "likedAnswerIds": [],
+        "dislikedAnswerIds": []
+      }
+    ],
+    "questions": [
+      {
+        "id": 1,
+        "question": "Is hiking alone in Lithuania a good idea?",
+        "explanation": "I am afraid I will be too lonelly there. But maybe that's the way to meet people?",
+        "authorId": 1,
+        "rate": 1,
+        "date": "2023-02-09",
+        "edited": "2023-02-11"
+      },
+      {
+        "id": 2,
+        "question": "Spain in winter?",
+        "explanation": "explanatory text",
+        "authorId": 2,
+        "rate": 2,
+        "date": "2023-02-09",
+        "edited": "2023-02-10"
+      },
+      {
+        "id": 3,
+        "question": "How much snow in Alps in Italy now?",
+        "explanation": "explanatory text",
+        "authorId": 1,
+        "rate": 1,
+        "date": "2023-02-09",
+        "edited": "2023-02-10"
+      },
+      {
+        "id": 4,
+        "question": "What kind of boots you will recommend me for hiking in winter?",
+        "explanation": "explanatory text",
+        "authorId": 3,
+        "rate": 0,
+        "date": "2023-02-09",
+        "edited": ""
+      },
+      {
+        "id": 6,
+        "question": "Do I need winter tires in Pyrenees mountains in winter?",
+        "explanation": "explanatory text",
+        "authorId": 2,
+        "rate": 1,
+        "date": "2023-02-09",
+        "edited": ""
+      },
+      {
+        "id": 1676061209967,
+        "question": "How about Kaunas in February?",
+        "explanation": "Isn't it too cold?",
+        "authorId": 3,
+        "rate": 0,
+        "date": "2023-02-10",
+        "edited": ""
+      },
+      {
+        "id": 1676110345584,
+        "question": "pppppppppppppppppppppppppppppppp",
+        "explanation": "fggggggggggggggggggggg",
+        "authorId": 3,
+        "rate": 0,
+        "date": "2023-02-11",
+        "edited": "2023-02-11"
+      }
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "A",
+        "authorId": 2,
+        "questionId": 1,
+        "rate": 3,
+        "date": "2023-02-09",
+        "edited": "2023-02-10"
+      },
+      {
+        "id": 3,
+        "answer": "C",
+        "authorId": 2,
+        "questionId": 3,
+        "rate": 0,
+        "date": "2023-02-09",
+        "edited": ""
+      },
+      {
+        "id": 4,
+        "answer": "D",
+        "authorId": 2,
+        "questionId": 3,
+        "rate": 5,
+        "date": "2023-02-09",
+        "edited": "2023-02-10"
+      },
+      {
+        "id": 5,
+        "answer": "E",
+        "authorId": 1,
+        "questionId": 4,
+        "rate": 2,
+        "date": "2023-02-09",
+        "edited": "2023-02-10"
+      },
+      {
+        "id": 8,
+        "answer": "H",
+        "authorId": 3,
+        "questionId": 4,
+        "rate": 6,
+        "date": "2023-02-09",
+        "edited": "2023-02-10"
+      },
+      {
+        "id": 9,
+        "answer": "I",
+        "authorId": 3,
+        "questionId": 4,
+        "rate": 2,
+        "date": "2023-02-09",
+        "edited": "2023-02-10"
+      },
+      {
+        "id": 10,
+        "answer": "J",
+        "authorId": 3,
+        "questionId": 1,
+        "rate": 7,
+        "date": "2023-02-09",
+        "edited": "2023-02-10"
+      },
+      {
+        "id": 1676071987505,
+        "answer": "Sure - just go and enjoy!",
+        "authorId": 1,
+        "questionId": 2,
+        "rate": 0,
+        "date": "2023-02-10",
+        "edited": ""
+      },
+      {
+        "id": 1676072076905,
+        "answer": "Am I the only one who has oppinion here? Hello?",
+        "authorId": 1,
+        "questionId": 2,
+        "rate": 0,
+        "date": "2023-02-10",
+        "edited": "2023-02-11"
+      },
+      {
+        "id": 1676110369712,
+        "answer": "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+        "authorId": 1,
+        "questionId": 1676110345584,
+        "rate": 0,
+        "date": "2023-02-11",
+        "edited": ""
+      },
+      {
+        "id": 1676110389185,
+        "answer": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "authorId": 2,
+        "questionId": 1676110345584,
+        "rate": 0,
+        "date": "2023-02-11",
+        "edited": ""
+      },
+      {
+        "id": 1676110394193,
+        "answer": "ssssssssssssssssssssssssssssssssss2",
+        "authorId": 2,
+        "questionId": 1676110345584,
+        "rate": 0,
+        "date": "2023-02-11",
+        "edited": "2023-02-11"
+      }
+    ]
+  }
