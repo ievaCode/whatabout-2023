@@ -126,15 +126,6 @@
       "edited": ""
     },
     {
-      "id": 5,
-      "question": "How to get from Paris to Cervinia?",
-      "explanation": "explanatory text",
-      "authorId": 3,
-      "rate": 1,
-      "date": "2023-02-09",
-      "edited": ""
-    },
-    {
       "id": 6,
       "question": "Do I need winter tires in Pyrenees mountains in winter?",
       "explanation": "explanatory text",
@@ -142,6 +133,24 @@
       "rate": 1,
       "date": "2023-02-09",
       "edited": ""
+    },
+    {
+      "id": 1676061209967,
+      "question": "How about Kaunas in February?",
+      "explanation": "Isn't it too cold?",
+      "authorId": 3,
+      "rate": 0,
+      "date": "2023-02-10",
+      "edited": ""
+    },
+    {
+      "id": 1676066627487,
+      "question": "Some stupid question",
+      "explanation": "blah blah blah... In fact not so stupid!",
+      "authorId": 3,
+      "rate": 0,
+      "date": "2023-02-10",
+      "edited": "2023-02-10"
     }
   ],
   "answers": [
@@ -156,12 +165,12 @@
     },
     {
       "id": 2,
-      "answer": "B",
+      "answer": "Why just one letter in the answer before??",
       "authorId": 1,
       "questionId": 2,
       "rate": 4,
       "date": "2023-02-09",
-      "edited": ""
+      "edited": "2023-02-11"
     },
     {
       "id": 3,
@@ -191,24 +200,6 @@
       "edited": "2023-02-10"
     },
     {
-      "id": 6,
-      "answer": "F",
-      "authorId": 1,
-      "questionId": 5,
-      "rate": 4,
-      "date": "2023-02-09",
-      "edited": "2023-02-10"
-    },
-    {
-      "id": 7,
-      "answer": "G",
-      "authorId": 1,
-      "questionId": 2,
-      "rate": 0,
-      "date": "2023-02-09",
-      "edited": "2023-02-10"
-    },
-    {
       "id": 8,
       "answer": "H",
       "authorId": 3,
@@ -234,6 +225,24 @@
       "rate": 7,
       "date": "2023-02-09",
       "edited": "2023-02-10"
+    },
+    {
+      "id": 1676071987505,
+      "answer": "Sure - just go and enjoy!",
+      "authorId": 1,
+      "questionId": 2,
+      "rate": 0,
+      "date": "2023-02-10",
+      "edited": ""
+    },
+    {
+      "id": 1676072076905,
+      "answer": "bu bu ir mu mu mu",
+      "authorId": 1,
+      "questionId": 2,
+      "rate": 0,
+      "date": "2023-02-10",
+      "edited": ""
     }
   ]
 }

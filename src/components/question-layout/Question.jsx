@@ -14,6 +14,7 @@ const Question = ({question}) => {
 
   const { users, loggedInUser } = useContext(UserContext);
   const { editQuestion, deleteQuestion } = useContext(QuestionContext);
+  const { addNewAnswer } = useContext(AnswerContext);
   const { answers } = useContext(AnswerContext);
 
   const questionOwner = users.find(user => user.id === question.authorId);
@@ -22,7 +23,6 @@ const Question = ({question}) => {
 
   return (
     <article style = {{border: "1px solid black"}} className="card question">
-        <span>id: {question.id}</span>
         <div className="numberOfAnswers">
             <span>answers: {numberOfAnswers}</span>
         </div>
@@ -30,7 +30,7 @@ const Question = ({question}) => {
         {loggedInUser && loggedInUser.id === questionOwner.id &&
             <>
                 <div className="button editButton"><Link to={`/questions/edit-question/${question.id}`}>Edit my question</Link></div>
-                <button className="button deleteButton">Delete my question</button>          
+                <button className="button deleteButton" onClick = {()=> deleteQuestion(question.id)}>Delete my question</button>          
             </>        
         }
         <span className="date">{question.date}</span>
@@ -44,7 +44,9 @@ const Question = ({question}) => {
             <Link className="questionHeading" to={`/questions/${question.id}`}>{question.question}</Link>
             <p className="questionText">{question.explanation}</p>      
         </div> 
-        {loggedInUser && <button className="button addAnswer">Add your answer</button>}
+        {loggedInUser && <div className="button addAnswer">
+            <Link to={`/questions/new-answer/${question.id}`}>Add Your answer</Link>
+        </div>}
     </article>
   );
 }

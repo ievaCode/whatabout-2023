@@ -29,13 +29,6 @@ const AnswerProvider = ({ children }) => {
       method: "DELETE"
     })
   }
-  let updateWithPUT = (id, newDataObject) => {
-    fetch(`http://localhost:5000/answers/${id}`, {
-      method: "PUT",
-      headers: {'Content-type': 'application/json'},
-      body: JSON.stringify(newDataObject)
-    })
-  }
   let updateWithPATCH = (id, newData) => { 
     fetch(`http://localhost:5000/answers/${id}`, {
       method: "PATCH",
@@ -43,16 +36,31 @@ const AnswerProvider = ({ children }) => {
       body: JSON.stringify(newData)
     })
     .then(res => res.json())
-    .then(data => console.log(data));
   }
   
   //onClick and other functions
+  const addNewAnswer = (newAnswer) => {
+    setAnswers([newAnswer, ...answers]);
+    post(newAnswer);
+  }  
+  const deleteAnswer = (id) => {
+    remove(id);
+    setAnswers(answers.filter(answer => answer.id !== id));
+  }
 
+  const updateAnswer = (id, updatedAnswer) => {
+    updateWithPATCH(id, updatedAnswer);
+    setAnswers(answers.map(answer => answer.id.toString() === id ? {...answer, ...updatedAnswer} : answer));
+  }
 
   return (
     <AnswerContext.Provider
       value={{
-        answers
+        answers,
+        setAnswers,
+        deleteAnswer,
+        addNewAnswer,
+        updateAnswer
       }}
     >
       {children}
