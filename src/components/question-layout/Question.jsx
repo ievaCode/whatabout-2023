@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import UserContext from "../../contexts/UserContext";
 import QuestionContext from "../../contexts/QuestionContext";
@@ -14,12 +14,20 @@ const Question = ({question}) => {
 
   const { users, loggedInUser } = useContext(UserContext);
   const { editQuestion, deleteQuestion } = useContext(QuestionContext);
-  const { addNewAnswer } = useContext(AnswerContext);
-  const { answers } = useContext(AnswerContext);
+  const { answers, deleteAnswer } = useContext(AnswerContext);
+
+  const navigation = useNavigate();
 
   const questionOwner = users.find(user => user.id === question.authorId);
 
   const numberOfAnswers = answers.filter(answer => answer.questionId === question.id).length;
+
+  const onDeleteQuestion = (id) => {
+    deleteQuestion(id);
+    const relevantAnswers = answers.filter(answer => answer.questionId === id);
+    relevantAnswers.forEach(answer => deleteAnswer(answer));
+    navigation('/questions');  
+  }
 
   return (
     <article style = {{border: "1px solid black"}} className="card question">
@@ -30,7 +38,7 @@ const Question = ({question}) => {
         {loggedInUser && loggedInUser.id === questionOwner.id &&
             <>
                 <div className="button editButton"><Link to={`/questions/edit-question/${question.id}`}>Edit my question</Link></div>
-                <button className="button deleteButton" onClick = {()=> deleteQuestion(question.id)}>Delete my question</button>          
+                <button className="button deleteButton" onClick = {()=>onDeleteQuestion(question.id)}>Delete my question</button>          
             </>        
         }
         <span className="date">{question.date}</span>
@@ -45,7 +53,7 @@ const Question = ({question}) => {
             <p className="questionText">{question.explanation}</p>      
         </div> 
         {loggedInUser && <div className="button addAnswer">
-            <Link to={`/questions/new-answer/${question.id}`}>Add Your answer</Link>
+            <Link to={`/questions/${question.id}/new-answer`}>Add Your answer</Link>
         </div>}
     </article>
   );

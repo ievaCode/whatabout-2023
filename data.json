@@ -92,20 +92,11 @@
     {
       "id": 1,
       "question": "Is hiking alone in Lithuania a good idea?",
-      "explanation": "explanatory text",
+      "explanation": "I am afraid I will be too lonelly there. But maybe that's the way to meet people?",
       "authorId": 1,
       "rate": 1,
       "date": "2023-02-09",
-      "edited": ""
-    },
-    {
-      "id": 2,
-      "question": "Spain in winter?",
-      "explanation": "explanatory text",
-      "authorId": 2,
-      "rate": 2,
-      "date": "2023-02-09",
-      "edited": "2023-02-10"
+      "edited": "2023-02-11"
     },
     {
       "id": 3,
@@ -115,15 +106,6 @@
       "rate": 1,
       "date": "2023-02-09",
       "edited": "2023-02-10"
-    },
-    {
-      "id": 4,
-      "question": "What kind of boots you will recommend me for hiking in winter?",
-      "explanation": "explanatory text",
-      "authorId": 3,
-      "rate": 0,
-      "date": "2023-02-09",
-      "edited": ""
     },
     {
       "id": 6,
@@ -144,13 +126,13 @@
       "edited": ""
     },
     {
-      "id": 1676066627487,
-      "question": "Some stupid question",
-      "explanation": "blah blah blah... In fact not so stupid!",
+      "id": 1676110345584,
+      "question": "pppppppppppppppppppppppppppppppp",
+      "explanation": "fggggggggggggggggggggg",
       "authorId": 3,
       "rate": 0,
-      "date": "2023-02-10",
-      "edited": "2023-02-10"
+      "date": "2023-02-11",
+      "edited": "2023-02-11"
     }
   ],
   "answers": [
@@ -162,15 +144,6 @@
       "rate": 3,
       "date": "2023-02-09",
       "edited": "2023-02-10"
-    },
-    {
-      "id": 2,
-      "answer": "Why just one letter in the answer before??",
-      "authorId": 1,
-      "questionId": 2,
-      "rate": 4,
-      "date": "2023-02-09",
-      "edited": "2023-02-11"
     },
     {
       "id": 3,
@@ -191,33 +164,6 @@
       "edited": "2023-02-10"
     },
     {
-      "id": 5,
-      "answer": "E",
-      "authorId": 1,
-      "questionId": 4,
-      "rate": 2,
-      "date": "2023-02-09",
-      "edited": "2023-02-10"
-    },
-    {
-      "id": 8,
-      "answer": "H",
-      "authorId": 3,
-      "questionId": 4,
-      "rate": 6,
-      "date": "2023-02-09",
-      "edited": "2023-02-10"
-    },
-    {
-      "id": 9,
-      "answer": "I",
-      "authorId": 3,
-      "questionId": 4,
-      "rate": 2,
-      "date": "2023-02-09",
-      "edited": "2023-02-10"
-    },
-    {
       "id": 10,
       "answer": "J",
       "authorId": 3,
@@ -227,22 +173,31 @@
       "edited": "2023-02-10"
     },
     {
-      "id": 1676071987505,
-      "answer": "Sure - just go and enjoy!",
+      "id": 1676110369712,
+      "answer": "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
       "authorId": 1,
-      "questionId": 2,
+      "questionId": 1676110345584,
       "rate": 0,
-      "date": "2023-02-10",
+      "date": "2023-02-11",
       "edited": ""
     },
     {
-      "id": 1676072076905,
-      "answer": "bu bu ir mu mu mu",
-      "authorId": 1,
-      "questionId": 2,
+      "id": 1676110389185,
+      "answer": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "authorId": 2,
+      "questionId": 1676110345584,
       "rate": 0,
-      "date": "2023-02-10",
+      "date": "2023-02-11",
       "edited": ""
+    },
+    {
+      "id": 1676110394193,
+      "answer": "ssssssssssssssssssssssssssssssssss2",
+      "authorId": 2,
+      "questionId": 1676110345584,
+      "rate": 0,
+      "date": "2023-02-11",
+      "edited": "2023-02-11"
     }
   ]
 }

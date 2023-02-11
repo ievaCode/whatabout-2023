@@ -20,7 +20,7 @@ const Question = ({answer, tagNumber}) => {
         <UserCard userData = {answerOwner}/>
         {loggedInUser && loggedInUser.id === answerOwner.id &&
             <>
-                <div className="button editButton"><Link to={`/questions/edit-answer/${answer.questionId}`}>Edit my answer</Link></div>
+                <div className="button editButton"><Link to={`/questions/edit-answer/${answer.id}`}>Edit my answer</Link></div>
                 <button className="button deleteButton" onClick = {()=> deleteAnswer(answer.id)}>Delete my answer</button>                
             </>        
         }
