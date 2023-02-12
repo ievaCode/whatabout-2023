@@ -22,9 +22,10 @@ const NewQuestion = () => {
           question: values.question,
           explanation: values.explanation,
           authorId: loggedInUser.id,
-          rate: 0,
           date: dateNow,
           edited: "",
+          likedBy: [],
+          dislikedBy: []
         };
         addNewQuestion(newQuestion);
         navigation('/questions');

@@ -23,9 +23,10 @@ const NewAnswer = () => {
           answer: values.answer,
           authorId: loggedInUser.id,
           questionId: Number(questionId),
-          rate: 0,
           date: dateNow,
           edited: "",
+          likedBy: [],
+          dislikedBy: []
         };
         addNewAnswer(newAnswer);
         navigation('/questions');
