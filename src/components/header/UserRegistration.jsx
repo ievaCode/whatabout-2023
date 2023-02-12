@@ -14,6 +14,7 @@ const UserLoginMenu = () => {
 
   const logOutUser = () => {
     setLoggedInUser(null);
+    window.location.reload();
     navigation('/questions');
   }
 

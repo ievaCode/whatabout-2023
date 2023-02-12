@@ -1,20 +1,18 @@
 import { useContext } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 
 import UserContext from "../../contexts/UserContext";
 import QuestionContext from "../../contexts/QuestionContext";
 import AnswerContext from "../../contexts/AnswerContext";
 import UserCard from "../molecules/user-card/UserCard";
-
-import like from "../../assets/like.png"
-import dislike from "../../assets/dislike.png"
+import LikeCount from "../molecules/LikeCount";
 
 
 const Question = ({question}) => {
 
   const { users, loggedInUser } = useContext(UserContext);
-  const { editQuestion, deleteQuestion } = useContext(QuestionContext);
-  const { answers, deleteAnswer } = useContext(AnswerContext);
+  const { updateQuestion, deleteQuestion } = useContext(QuestionContext);
+  const { answers } = useContext(AnswerContext);
 
   const navigation = useNavigate();
 
@@ -24,8 +22,8 @@ const Question = ({question}) => {
 
   const onDeleteQuestion = (id) => {
     deleteQuestion(id);
-    const relevantAnswers = answers.filter(answer => answer.questionId === id);
-    relevantAnswers.forEach(answer => deleteAnswer(answer));
+    // const relevantAnswers = answers.filter(answer => answer.questionId === id);
+    // relevantAnswers.forEach(answer => deleteAnswer(answer.id));
     navigation('/questions');  
   }
 
@@ -40,14 +38,16 @@ const Question = ({question}) => {
                 <div className="button editButton"><Link to={`/questions/edit-question/${question.id}`}>Edit my question</Link></div>
                 <button className="button deleteButton" onClick = {()=>onDeleteQuestion(question.id)}>Delete my question</button>          
             </>        
-        }
+        }        
         <span className="date">{question.date}</span>
         {question.edited && <span className="edited">last edited on {question.edited}</span>}
-        <div className="likeWrapper" >
-            <img style = {{width:"24px", height: "auto"}} className="likeButton" src={like} alt="" />
-            <span className="rate">{question.rate}</span>
-            <img style = {{width:"24px", height: "auto"}} className="dislikeButton" src={dislike} alt="" />
-        </div>
+        {loggedInUser? 
+            <LikeCount item={question} action={updateQuestion} /> :
+            <div className="statistics">
+                <span className="rate">Rate: {question.likedBy.length-question.dislikedBy.length}</span>
+                <span className="votes">Votes: {question.likedBy.length+question.dislikedBy.length}</span>
+            </div>
+        }
         <div className="mainSection">   
             <Link className="questionHeading" to={`/questions/${question.id}`}>{question.question}</Link>
             <p className="questionText">{question.explanation}</p>      
