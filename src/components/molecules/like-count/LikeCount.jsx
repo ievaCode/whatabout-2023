@@ -1,14 +1,15 @@
 import { useContext, useState, useEffect } from "react";
 
-import UserContext from "../../contexts/UserContext";
+import UserContext from "../../../contexts/UserContext";
 // import QuestionContext from "../../contexts/QuestionContext";
 // import AnswerContext from "../../contexts/AnswerContext";
 
-import like from "../../assets/like.png";
-import dislike from "../../assets/dislike.png";
-import like_full from "../../assets/like_full.png";
-import dislike_full from "../../assets/dislike_full.png";
+import like from "../../../assets/like.png";
+import dislike from "../../../assets/dislike.png";
+import like_full from "../../../assets/like_full.png";
+import dislike_full from "../../../assets/dislike_full.png";
 
+import "./likeCount.scss"
 
 const LikeCount = ({item, action}) => {
 
@@ -59,32 +60,30 @@ const LikeCount = ({item, action}) => {
     };
 
     return (
+        <div className="userStatistics">
             <div className="likeWrapper" >
                 {liked ?
-                    <img style = {{width:"24px", height: "auto"}}
-                        className="likeButton" src={like_full}
+                    <img className="likeButton" src={like_full}
                         alt="liked icon"
                         onClick = {onLike}
                         /> :
-                    <img style = {{width:"24px", height: "auto"}}
-                        className="likeButton" src={like}
+                    <img className="likeButton" src={like}
                         alt="could be liked icon"
                         onClick = {onLike} 
                         />
                 }                
-                <span className="rate">{likers.length-dislikers.length}</span>
+                <span className="rate rateCount">{likers.length-dislikers.length}</span>
                 {disliked ?
-                    <img style = {{width:"24px", height: "auto"}}
-                        className="likeButton" src={dislike_full}
+                    <img className="likeButton" src={dislike_full}
                         alt="disliked icon"
                         onClick = {onDislike}  /> :
-                    <img style = {{width:"24px", height: "auto"}}
-                        className="likeButton" src={dislike}
+                    <img className="likeButton" src={dislike}
                         alt="could be disliked icon"
                         onClick = {onDislike}   />
-                }
-                <span className="votes">Votes: {item.likedBy.length+item.dislikedBy.length}</span>
-            </div> 
+                }                
+            </div>
+            <span className="votes">Votes: {item.likedBy.length+item.dislikedBy.length}</span>
+        </div> 
     );
 }
  

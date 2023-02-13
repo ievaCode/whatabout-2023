@@ -6,6 +6,8 @@ import { Formik, Form, Field } from 'formik';
 import UserContext from "../../contexts/UserContext";
 import AnswerContext from "../../contexts/AnswerContext";
 
+import "../styles/form-styles/formStyles.scss"
+
 const NewAnswer = () => {
 
     const { loggedInUser } = useContext(UserContext);
@@ -29,7 +31,7 @@ const NewAnswer = () => {
           dislikedBy: []
         };
         addNewAnswer(newAnswer);
-        navigation('/questions');
+        navigation(-1);
       }
   
     const validationSchema = Yup.object().shape({
@@ -43,7 +45,7 @@ const NewAnswer = () => {
     });
 
     return ( 
-      <div className="answerForm newAnswerForm">
+      <div className="answerForm formContainer">
         <Formik initialValues={{
             answer: ''
           }}
@@ -60,7 +62,7 @@ const NewAnswer = () => {
                     value={values.answer} 
                     onChange={(e)=>setValues({...values, answer:e.target.value})}
                   />
-                  {errors.answer && touched.answer ? <span>{errors.answer}</span> : null}
+                  {errors.answer && touched.answer ? <span className='errors'>{errors.answer}</span> : null}
                 </label>
               </div>              
               <button type="submit">Publish answer</button>

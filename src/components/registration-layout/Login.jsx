@@ -30,7 +30,7 @@ const Login = () => {
   });
 
   return (
-    <div className="registration">
+    <div className="registration formContainer">
       <Formik 
         initialValues={{email: '', password: ''}}
         validationSchema={validationSchema}
@@ -45,7 +45,7 @@ const Login = () => {
                   value={values.email} 
                   onChange={(e)=>setValues({...values, email:e.target.value})}
                 />
-                {errors.email && touched.email ? <span>{errors.email}</span> : null}
+                {errors.email && touched.email ? <span className='errors'>{errors.email}</span> : null}
               </label>
             </div>
             <div>
@@ -55,7 +55,7 @@ const Login = () => {
                   value={values.password} 
                   onChange={(e)=>setValues({...values, password:e.target.value})}
                 />
-                {errors.password && touched.password ? <span>{errors.password}</span> : null}
+                {errors.password && touched.password ? <span className='errors'>{errors.password}</span> : null}
               </label>
             </div>            
             <button type="submit">Sign in</button>

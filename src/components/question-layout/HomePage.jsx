@@ -12,11 +12,15 @@ const QuestionList = () => {
   const { loggedInUser, users } = useContext(UserContext);
 
   return (
-    <>
-      {loggedInUser ? 
-        <Link className="addNewPost" to="/questions/new-question"> + Add new Question</Link> :
-        <Link className="addNewPost" to="/login"> + Add new Question</Link>      
-      }
+    <div className="mainPageContainer">
+      <div className="actionContainer">
+        <button className="filter">Filter</button>
+        <button className="sort">Sort</button>
+        {loggedInUser ? 
+          <Link className="addNewQuestion" to="/questions/new-question"> + Ask a Question</Link> :
+          <Link className="addNewQuestion" to="/login"> + Ask a Question</Link>      
+        }
+      </div>
       {users ?
         <div className = "questionList">   
           {questions.map(question => 
@@ -25,7 +29,7 @@ const QuestionList = () => {
         </div> :
         <p>...Loding</p>
       }
-    </>
+    </div>
   );
 }
  

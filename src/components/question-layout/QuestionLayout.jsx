@@ -2,6 +2,8 @@ import { Outlet } from "react-router-dom";
 
 import Header from "../header/Header"
 
+import "../styles/layout-styles/layoutStyles.scss"
+
 const QuestionLayout = () => {
 
     return (

@@ -1,0 +1,13 @@
+.mainPageContainer {
+  padding: 20px 10px;
+}
+.mainPageContainer .addNewQuestion {
+  color: rgb(58, 77, 65);
+}
+.mainPageContainer .questionList {
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  box-sizing: border-box;
+}/*# sourceMappingURL=questionStyles.css.map */

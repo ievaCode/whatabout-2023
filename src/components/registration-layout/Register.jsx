@@ -55,7 +55,7 @@ const Register = () => {
   });
 
   return (
-    <div className="registration">
+    <div className="registration formContainer">
       <Formik initialValues={{
           email: '',
           username: '',
@@ -75,7 +75,7 @@ const Register = () => {
                   value={values.email} 
                   onChange={(e)=>setValues({...values, email:e.target.value})}
                 />
-                {errors.email && touched.email ? <span>{errors.email}</span> : null}
+                {errors.email && touched.email ? <span className='errors'>{errors.email}</span> : null}
               </label>
             </div>
             <div>
@@ -85,7 +85,7 @@ const Register = () => {
                   value={values.username} 
                   onChange={(e)=>setValues({...values, username:e.target.value})}
                 />
-                {errors.username && touched.username ? <span>{errors.username}</span> : null}
+                {errors.username && touched.username ? <span className='errors'>{errors.username}</span> : null}
               </label>
             </div>
             <div>
@@ -95,7 +95,7 @@ const Register = () => {
                   value={values.imageUrl}
                   onChange={(e)=>setValues({...values, imageUrl:e.target.value})}
                 />
-                { errors.imageUrl && touched.imageUrl ? <span>{errors.imageUrl}</span> : null }
+                { errors.imageUrl && touched.imageUrl ? <span className='errors'>{errors.imageUrl}</span> : null }
               </label>
             </div>
             <div>
@@ -105,7 +105,7 @@ const Register = () => {
                   value={values.password1} 
                   onChange={(e)=>setValues({...values, password1:e.target.value})}
                 />
-                {errors.password1 && touched.password1 ? <span>{errors.password1}</span> : null}
+                {errors.password1 && touched.password1 ? <span className='errors'>{errors.password1}</span> : null}
               </label>
             </div>
             <div>
@@ -115,7 +115,7 @@ const Register = () => {
                   value={values.password2} 
                   onChange={(e)=>setValues({...values, password2:e.target.value})}
                 />
-                {errors.password2 && touched.password2 ? <span>{errors.password2}</span> : null}
+                {errors.password2 && touched.password2 ? <span className='errors'>{errors.password2}</span> : null}
               </label>
             </div>               
             <button type="submit">Register</button>

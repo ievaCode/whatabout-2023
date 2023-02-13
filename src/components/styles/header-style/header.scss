@@ -1,0 +1,54 @@
+$mainDark:  rgb(58, 77, 65);
+$mainLight: rgb(145, 189, 162);
+$secondDark: rgb(60, 13, 13);
+$secondLight: rgb(214, 197, 197);
+
+
+header{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    .header{
+        display: flex;
+        flex-direction: column;
+        padding: 5px 10px;
+        background-color: $mainLight;
+        opacity: 0.9;
+    }
+    .upperHeader{        
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 5px 0;     
+    }
+    .registration{
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+    .registrationButton{
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 3px 5px;
+        align-items: center;
+    }
+    .lowerHeader{
+        display: flex;
+        justify-content: flex-start;
+        font-size: 16px;
+        align-items: center;
+        padding: 5px 0;     
+    }
+    .logo{
+        font-size: 24px;
+        font-weight: 900;
+        margin-right: 10px;
+    }
+}
+@media (min-width: 600px) {
+    header{
+        width: 80%;
+        margin: auto;            
+    }
+}

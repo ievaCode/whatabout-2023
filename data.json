@@ -98,6 +98,18 @@
         3,
         2
       ],
+      "dislikedBy": [
+        1
+      ]
+    },
+    {
+      "id": 1676252472652,
+      "question": "Why so much time should be spent on css?",
+      "explanation": "It sucks. Ok, if it's too short, than it sucks mooooore.",
+      "authorId": 1,
+      "date": "2023-02-13",
+      "edited": "",
+      "likedBy": [],
       "dislikedBy": []
     }
   ],

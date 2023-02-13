@@ -1,0 +1,34 @@
+$mainDark:  rgb(58, 77, 65);
+$mainLight: rgb(145, 189, 162);
+$button: rgb(87, 112, 96);
+
+.mainPageContainer{
+    padding: 20px 10px;
+    .actionContainer{
+        display: flex;
+        justify-content: flex-start;
+        gap: 10px
+    }
+    .addNewQuestion{
+        color:$mainDark; 
+        margin-left: auto;
+    }    
+    .questionList, .answerList{
+        margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        box-sizing: border-box;
+    }
+    .answerList{
+        margin-top: 70px;
+    }
+}
+
+
+@media (min-width: 600px) {
+    .mainPageContainer{
+        width: 80%;
+        margin: auto;            
+    }
+}

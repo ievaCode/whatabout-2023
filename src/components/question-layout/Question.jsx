@@ -5,8 +5,9 @@ import UserContext from "../../contexts/UserContext";
 import QuestionContext from "../../contexts/QuestionContext";
 import AnswerContext from "../../contexts/AnswerContext";
 import UserCard from "../molecules/user-card/UserCard";
-import LikeCount from "../molecules/LikeCount";
+import LikeCount from "../molecules/like-count/LikeCount";
 
+import "../styles/card-styles/cardStyles.scss"
 
 const Question = ({question}) => {
 
@@ -28,33 +29,45 @@ const Question = ({question}) => {
   }
 
   return (
-    <article style = {{border: "1px solid black"}} className="card question">
-        <div className="numberOfAnswers">
-            <span>answers: {numberOfAnswers}</span>
-        </div>
-        <UserCard userData = {questionOwner}/>
-        {loggedInUser && loggedInUser.id === questionOwner.id &&
-            <>
-                <div className="button editButton"><Link to={`/questions/edit-question/${question.id}`}>Edit my question</Link></div>
-                <button className="button deleteButton" onClick = {()=>onDeleteQuestion(question.id)}>Delete my question</button>          
-            </>        
-        }        
-        <span className="date">{question.date}</span>
-        {question.edited && <span className="edited">last edited on {question.edited}</span>}
-        {loggedInUser? 
-            <LikeCount item={question} action={updateQuestion} /> :
-            <div className="statistics">
-                <span className="rate">Rate: {question.likedBy.length-question.dislikedBy.length}</span>
-                <span className="votes">Votes: {question.likedBy.length+question.dislikedBy.length}</span>
+    <article className="card questionCard">
+
+        <div className="topSectionContainer">
+            <div className="dateContainer">
+                <span className="date">posted: {question.date}</span>
+                {question.edited && <span className="date edited">last edited on: {question.edited}</span>}
             </div>
-        }
-        <div className="mainSection">   
-            <Link className="questionHeading" to={`/questions/${question.id}`}>{question.question}</Link>
-            <p className="questionText">{question.explanation}</p>      
-        </div> 
-        {loggedInUser && <div className="button addAnswer">
-            <Link to={`/questions/${question.id}/new-answer`}>Add Your answer</Link>
-        </div>}
+            {loggedInUser && loggedInUser.id === questionOwner.id ?
+                <div className="manageButtonsWrapper">
+                    <div className="button editButton"><Link to={`/questions/edit-question/${question.id}`}>Edit</Link></div>
+                    <button className="button deleteButton" onClick = {()=>onDeleteQuestion(question.id)}>Delete</button>          
+                </div>  :
+                <UserCard userData = {questionOwner}/>      
+            }    
+        </div>
+        
+        <div className="mainSectionContainer">
+            <div className="leftSideContainer">                
+                {loggedInUser? 
+                    <LikeCount item={question} action={updateQuestion} /> :
+                    <div className="statistics">
+                        <p className="rateWrapper">rate: 
+                            <span className="rate"> {question.likedBy.length-question.dislikedBy.length}</span>
+                        </p>
+                        <p className="votes">from total votes of {question.likedBy.length+question.dislikedBy.length}</p>
+                    </div>
+                }
+            </div>
+            <div className="rightSideContainer">
+                <Link className="questionHeading" to={`/questions/${question.id}`}>{question.question}</Link>
+                {loggedInUser && <p className="questionText">{question.explanation}</p> }                
+            </div>
+            <div className="answerButton numberOfAnswers">{numberOfAnswers} answers</div>
+            {loggedInUser &&
+                <div className="answerButton addAnswer">
+                    <Link to={`/questions/${question.id}/new-answer`}>Add Your answer</Link>
+                </div>
+            }
+        </div>
     </article>
   );
 }
