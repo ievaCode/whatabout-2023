@@ -34,7 +34,7 @@ const EditAnswer = () => {
     });
 
     return ( 
-      <div className="answerForm editAnswerForm">
+      <div className="answerForm formContainer">
         <Formik initialValues={{
             answer: editedAnswer.answer,
           }}
