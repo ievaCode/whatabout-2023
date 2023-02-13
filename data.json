@@ -116,7 +116,7 @@
   "answers": [
     {
       "id": 1,
-      "answer": "A",
+      "answer": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quos consectetur provident, culpa laboriosam sint. Accusamus repudiandae libero modi recusandae!",
       "authorId": 2,
       "questionId": 1,
       "date": "2023-02-09",
@@ -126,7 +126,7 @@
     },
     {
       "id": 5,
-      "answer": "E",
+      "answer": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quos consectetur provident, culpa laboriosam sint. Accusamus repudiandae libero modi recusandae!",
       "authorId": 1,
       "questionId": 4,
       "date": "2023-02-09",
@@ -140,7 +140,7 @@
     },
     {
       "id": 9,
-      "answer": "I",
+      "answer": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quos consectetur provident, culpa laboriosam sint. Accusamus repudiandae libero modi recusandae!",
       "authorId": 3,
       "questionId": 4,
       "date": "2023-02-09",
@@ -154,7 +154,7 @@
     },
     {
       "id": 10,
-      "answer": "J",
+      "answer": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quos consectetur provident, culpa laboriosam sint. Accusamus repudiandae libero modi recusandae!",
       "authorId": 3,
       "questionId": 1,
       "date": "2023-02-09",

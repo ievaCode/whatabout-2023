@@ -38,7 +38,7 @@ const EditQuestion = () => {
     });
 
     return ( 
-      <div className="questionForm editQuestionForm">
+      <div className="questionForm formContainer">
         <Formik initialValues={{
             question: editedQuestion.question,
             explanation: editedQuestion.explanation
