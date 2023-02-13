@@ -19,11 +19,11 @@ const UserLoginMenu = () => {
   }
 
   return (
-    <div className="userLoginMenu">     
+    <div className="registration userRegistration">     
       <Link to={`/my-zone/${loggedInUser.id}`}>
         <UserCard userData = {loggedInUser} />
       </Link>
-      <div className="registration loginButton" onClick={() => logOutUser()}>
+      <div className="registrationButton loginButton" onClick={() => logOutUser()}>
           <Link to='/questions'>Log out</Link>
       </div>
     </div>  

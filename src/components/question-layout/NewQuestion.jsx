@@ -42,7 +42,7 @@ const NewQuestion = () => {
     });
 
     return ( 
-      <div className="questionForm newQuestionForm">
+      <div className="questionForm formContainer">
         <Formik initialValues={{
             question: '',
             explanation: ''
@@ -59,7 +59,7 @@ const NewQuestion = () => {
                     value={values.question} 
                     onChange={(e)=>setValues({...values, question:e.target.value})}
                   />
-                  {errors.question && touched.question ? <span>{errors.question}</span> : null}
+                  {errors.question && touched.question ? <span className='errors'>{errors.question}</span> : null}
                 </label>
               </div>
               <div>
@@ -70,7 +70,7 @@ const NewQuestion = () => {
                     value={values.explanation} 
                     onChange={(e)=>setValues({...values, explanation:e.target.value})}
                   />
-                  {errors.explanation && touched.explanation ? <span>{errors.explanation}</span> : null}
+                  {errors.explanation && touched.explanation ? <span className='errors'>{errors.explanation}</span> : null}
                 </label>
               </div>        
               <button type="submit">Publish question</button>

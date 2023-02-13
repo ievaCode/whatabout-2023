@@ -1,0 +1,29 @@
+.mainPageContainer {
+  padding: 20px 10px;
+}
+.mainPageContainer .actionContainer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.mainPageContainer .addNewQuestion {
+  color: rgb(58, 77, 65);
+  margin-left: auto;
+}
+.mainPageContainer .questionList, .mainPageContainer .answerList {
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  box-sizing: border-box;
+}
+.mainPageContainer .answerList {
+  margin-top: 70px;
+}
+
+@media (min-width: 600px) {
+  .mainPageContainer {
+    width: 80%;
+    margin: auto;
+  }
+}/*# sourceMappingURL=layoutStyles.css.map */
