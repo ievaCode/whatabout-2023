@@ -21,3 +21,8 @@ a {
 li {
   list-style: none;
 }
+
+.loading{
+  margin: 30vh 20px;
+  font-size: 20px;
+}

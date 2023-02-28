@@ -11,7 +11,6 @@ const Question = ({answer, tagNumber}) => {
   const { deleteAnswer, updateAnswer } = useContext(AnswerContext);
   const { users, loggedInUser } = useContext(UserContext);
   const answerOwner = users.find(user => user.id === answer.authorId);
-  console.log(tagNumber);
   
   return (
     <article className="card answerCard">
