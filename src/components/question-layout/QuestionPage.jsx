@@ -19,7 +19,7 @@ const QuestionPage = () => {
 
     return (
         questions?
-        <div className="mainPageContainer">
+        <div className="homePageContainer">
             <Question question={question} />             
             <div className="answerList">
                 {sortedAnswers.map(answer => 
