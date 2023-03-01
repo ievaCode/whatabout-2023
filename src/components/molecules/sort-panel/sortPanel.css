@@ -1,0 +1,38 @@
+.sortPanel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.sortPanel .labelSort {
+  margin-right: 4px;
+  line-height: 18px;
+  color: rgb(58, 77, 65);
+}
+.sortPanel .selectSort {
+  border-radius: 2px;
+  border: 2px solid rgb(145, 189, 162);
+  margin-left: 4px;
+  padding: 1px;
+}
+.sortPanel .selectSort.active {
+  background-color: rgb(145, 189, 162);
+}
+.sortPanel .selectSort:focus {
+  border-color: rgb(145, 189, 162);
+  outline: none;
+}
+.sortPanel .selectSort option {
+  background-color: white;
+}
+.sortPanel .selectSort option:checked {
+  background-color: rgb(145, 189, 162);
+}
+.sortPanel .filterButton {
+  padding: 4px;
+  border: 2px solid rgb(145, 189, 162);
+  border-radius: 2px;
+  background: none;
+}
+.sortPanel .filterButton.active {
+  background-color: rgb(145, 189, 162);
+}/*# sourceMappingURL=sortPanel.css.map */

@@ -1,0 +1,55 @@
+$mainDark:  rgb(58, 77, 65);
+$mainLight: rgb(145, 189, 162);
+$button: rgb(87, 112, 96);
+
+.sortPanel{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 12px;
+    .labelSort{
+        display: flex;
+        flex-direction: column;
+    }
+    .selectSort {
+        width: 300px;
+        border-radius: 2px;
+        border: 2px solid $mainLight;
+        padding: 1px;
+        &.active{
+            background-color: $mainLight;
+        }
+        &:focus {
+            border-color: $mainLight;
+            outline: none;
+        }
+        & option{
+            background-color: white;
+        }
+        & option:checked{
+            background-color: $mainLight;
+        }
+    }
+    .filterButton{
+        width: fit-content;
+        padding: 4px 8px;
+        border: 2px solid $mainLight;
+        border-radius: 10px;
+        background: none;
+        &.active{
+            background-color: $mainLight;
+        }
+    }
+}
+
+@media (min-width: 500px){
+ .sortPanel{
+    .labelSort{
+        flex-direction:row;
+        align-items: center;
+    }
+    .selectSort{
+        margin-left: 4px;
+    }
+ }
+}

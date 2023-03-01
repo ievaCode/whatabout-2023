@@ -2,16 +2,17 @@ $mainDark:  rgb(58, 77, 65);
 $mainLight: rgb(145, 189, 162);
 $button: rgb(87, 112, 96);
 
-.mainPageContainer{
+.homePageContainer{
     padding: 20px 10px;
     .actionContainer{
         display: flex;
-        justify-content: flex-start;
+        flex-direction: column;
         gap: 10px
     }
     .addNewQuestion{
-        color:$mainDark; 
         margin-left: auto;
+        font-size: 18px;
+        font-weight: 600;
     }    
     .questionList, .answerList{
         margin: 20px auto;
@@ -27,7 +28,7 @@ $button: rgb(87, 112, 96);
 
 
 @media (min-width: 600px) {
-    .mainPageContainer{
+    .homePageContainer{
         width: 80%;
         margin: auto;            
     }

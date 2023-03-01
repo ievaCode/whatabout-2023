@@ -3,6 +3,8 @@ import { useContext, useState, useEffect } from "react";
 import QuestionContext from "../../../contexts/QuestionContext";
 import AnswerContext from "../../../contexts/AnswerContext";
 
+import "./sortPanel.scss";
+
 
 const SortPanel = ({setSortedQuestions}) => {
 
@@ -10,6 +12,7 @@ const SortPanel = ({setSortedQuestions}) => {
   const { answers } = useContext(AnswerContext);
 
   const [selectedOption, setSelectedOption] = useState("newest");
+  const [previousSort, setPreviousSort] = useState("newest");
     
   useEffect(() => {
     setSortedQuestions(sortedQuestions);
@@ -33,27 +36,32 @@ const SortPanel = ({setSortedQuestions}) => {
               (b.likedBy.length - b.dislikedBy.length) -
               (a.likedBy.length - a.dislikedBy.length)
           );
+      case "notAnswered":
+        return  [...questions].filter(question => answers.filter(answer => answer.questionId === question.id).length === 0);
       default:
         return null;
     }
   }
-
-  function handleFilter() {
-    const notAnswered = [...questions].filter(question => answers.filter(answer => answer.questionId === question.id).length === 0);
-    setSortedQuestions(notAnswered);
+  const handleFilter = () => {
+    setPreviousSort(selectedOption);
+    selectedOption === "notAnswered" ? setSelectedOption(previousSort) : setSelectedOption("notAnswered"); 
   }
 
     return (
       <div className="sortPanel">
-        <label>Sort questions: 
-          <select name="sort" id="sort" onChange = {e => setSelectedOption(e.target.value)}>
-              <option value="newest" >By date from the newest</option>
-              <option value="oldest" >By date from the oldest</option>
-              <option value="mostAnswered" >By the number of answers</option>
-              <option value="highestRate" >By rate</option>
+        <label className="labelSort">Sort questions by:
+          <select className={selectedOption === "notAnswered" ? "selectSort" : "selectSort active"} name="sort" id="sort" onChange = {e => setSelectedOption(e.target.value)}>
+              <option value="newest" >date from the newest</option>
+              <option value="oldest" >date from the oldest</option>
+              <option value="mostAnswered" >the number of answers</option>
+              <option value="highestRate" >rate</option>
           </select>
         </label>
-        <button onClick = {handleFilter}>Filter not answered</button>
+        <button 
+          className =  {selectedOption === "notAnswered" ? "filterButton active" : "filterButton"} 
+          onClick = {handleFilter}> 
+          Filter not answered
+        </button>
       </div>
     )
   }

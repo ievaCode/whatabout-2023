@@ -19,14 +19,14 @@ const QuestionList = () => {
   }, [questions]);
 
   return (
-    <div className="mainPageContainer">
+    <div className="homePageContainer">
       <div className="actionContainer">
         {loggedInUser ? 
           <Link className="addNewQuestion" to="/questions/new-question"> + Ask a Question</Link> :
           <Link className="addNewQuestion" to="/login"> + Ask a Question</Link>      
         }
+        <SortPanel setSortedQuestions = {setSortedQuestions}/>
       </div>
-      <SortPanel setSortedQuestions = {setSortedQuestions}/>
       {questions && users ?
         <div className = "questionList">
           {sortedQuestions.map(question => 
