@@ -1,33 +1,42 @@
-import { useContext} from "react";
+import { useContext, useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 
 import QuestionContext from "../../contexts/QuestionContext";
+import AnswerContext from "../../contexts/AnswerContext";
 import UserContext from "../../contexts/UserContext";
 import Question from "./Question";
-
+import SortPanel from "../molecules/sort-panel/SortPanel";
 
 const QuestionList = () => {
 
   const { questions } = useContext(QuestionContext);
-  const { loggedInUser, users } = useContext(UserContext);
+  const { answers } = useContext(AnswerContext);
+  const { users, loggedInUser } = useContext(UserContext);
+  const [sortedQuestions, setSortedQuestions] = useState([]);
+
+  useEffect(() => {
+    setSortedQuestions(questions);
+  }, [questions]);
 
   return (
-    <div className="mainPageContainer">
+    <div className="homePageContainer">
       <div className="actionContainer">
-        <button className="filter">Filter</button>
-        <button className="sort">Sort</button>
         {loggedInUser ? 
           <Link className="addNewQuestion" to="/questions/new-question"> + Ask a Question</Link> :
           <Link className="addNewQuestion" to="/login"> + Ask a Question</Link>      
         }
+        <SortPanel setSortedQuestions = {setSortedQuestions}/>
       </div>
-      {users ?
-        <div className = "questionList">   
-          {questions.map(question => 
-          <Question key={question.id} question={question}/>  
+      {questions && users ?
+        <div className = "questionList">
+          {sortedQuestions.map(question => 
+            <Question 
+              key={question.id}
+              question={question}
+              numberOfAnswers = {answers.filter(answer => answer.questionId === question.id).length} />  
           )}
-        </div> :
-        <p>...Loding</p>
+        </div> 
+        : <p className="loading">...Loading</p>
       }
     </div>
   );

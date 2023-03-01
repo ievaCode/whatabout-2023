@@ -34,6 +34,17 @@
       "email": "meta@meta.lt",
       "password": "meta1234",
       "imageUrl": "https://i.pinimg.com/736x/30/ce/c2/30cec2b4ef71e4019e0e03ad48eda3d1.jpg"
+    },
+    {
+      "id": 1676276923639,
+      "username": "Dom",
+      "email": "domasd@domas.lt",
+      "password": "domas1234",
+      "imageUrl": "https://e7.pngegg.com/pngimages/308/63/png-clipart-bear-head-creative-head-cartoon-avatar.png",
+      "likedQuestionIds": [],
+      "dislikedQuestionIds": [],
+      "likedAnswerIds": [],
+      "dislikedAnswerIds": []
     }
   ],
   "questions": [
@@ -45,8 +56,8 @@
       "date": "2023-02-09",
       "edited": "2023-02-11",
       "likedBy": [
-        1,
-        4
+        4,
+        1
       ],
       "dislikedBy": []
     },
@@ -58,10 +69,11 @@
       "date": "2023-02-09",
       "edited": "2023-02-12",
       "likedBy": [
-        1,
         2,
+        4,
+        1,
         3,
-        4
+        1675885991700
       ],
       "dislikedBy": [
         5
@@ -74,7 +86,12 @@
       "authorId": 2,
       "date": "2023-02-09",
       "edited": "",
-      "likedBy": [],
+      "likedBy": [
+        3,
+        2,
+        1675885991700,
+        1675889912289
+      ],
       "dislikedBy": []
     },
     {
@@ -84,7 +101,9 @@
       "authorId": 3,
       "date": "2023-02-10",
       "edited": "",
-      "likedBy": [],
+      "likedBy": [
+        2
+      ],
       "dislikedBy": []
     },
     {
@@ -95,8 +114,8 @@
       "date": "2023-02-12",
       "edited": "",
       "likedBy": [
-        3,
-        2
+        2,
+        3
       ],
       "dislikedBy": [
         1
@@ -108,6 +127,61 @@
       "explanation": "It sucks. Ok, if it's too short, than it sucks mooooore.",
       "authorId": 1,
       "date": "2023-02-13",
+      "edited": "",
+      "likedBy": [
+        1,
+        3
+      ],
+      "dislikedBy": []
+    },
+    {
+      "id": 1676276952072,
+      "question": "As jau buvau prisiregistraves?",
+      "explanation": "Kodel mete klaida?",
+      "authorId": 1676276923639,
+      "date": "2023-02-13",
+      "edited": "",
+      "likedBy": [],
+      "dislikedBy": [
+        3
+      ]
+    },
+    {
+      "id": 1677595338106,
+      "question": "How to make sort work properly?",
+      "explanation": "It kind of works, but initial state should be reverse...",
+      "authorId": 3,
+      "date": "2023-02-28",
+      "edited": "",
+      "likedBy": [],
+      "dislikedBy": []
+    },
+    {
+      "id": 1677604011919,
+      "question": "Does sorting work?",
+      "explanation": "Does sorting work after adding new question?",
+      "authorId": 1,
+      "date": "2023-02-28",
+      "edited": "",
+      "likedBy": [],
+      "dislikedBy": []
+    },
+    {
+      "id": 1677604700248,
+      "question": "How to tell  when the question was just added?",
+      "explanation": "",
+      "authorId": 2,
+      "date": "2023-02-28",
+      "edited": "",
+      "likedBy": [],
+      "dislikedBy": []
+    },
+    {
+      "id": 1677604972963,
+      "question": "Still question about just added..",
+      "explanation": "",
+      "authorId": 1675885991700,
+      "date": "2023-02-28",
       "edited": "",
       "likedBy": [],
       "dislikedBy": []
@@ -122,7 +196,9 @@
       "date": "2023-02-09",
       "edited": "2023-02-10",
       "likedBy": [],
-      "dislikedBy": []
+      "dislikedBy": [
+        1
+      ]
     },
     {
       "id": 5,
@@ -132,7 +208,8 @@
       "date": "2023-02-09",
       "edited": "2023-02-10",
       "likedBy": [
-        1
+        1,
+        3
       ],
       "dislikedBy": [
         2
@@ -140,17 +217,18 @@
     },
     {
       "id": 9,
-      "answer": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quos consectetur provident, culpa laboriosam sint. Accusamus repudiandae libero modi recusandae!",
+      "answer": "valio valio valio valio valio\n",
       "authorId": 3,
       "questionId": 4,
       "date": "2023-02-09",
-      "edited": "2023-02-10",
+      "edited": "2023-02-13",
       "likedBy": [
         2,
-        1,
-        3
+        1
       ],
-      "dislikedBy": []
+      "dislikedBy": [
+        3
+      ]
     },
     {
       "id": 10,
@@ -163,10 +241,10 @@
       "dislikedBy": []
     },
     {
-      "id": 1676228110312,
-      "answer": "I still can't decide..",
-      "authorId": 3,
-      "questionId": 4,
+      "id": 1676228218012,
+      "answer": "I think it works.. At least sometimes..",
+      "authorId": 2,
+      "questionId": 1676228176282,
       "date": "2023-02-12",
       "edited": "",
       "likedBy": [
@@ -175,13 +253,27 @@
       "dislikedBy": []
     },
     {
-      "id": 1676228218012,
-      "answer": "I think it works.. At least sometimes..",
-      "authorId": 2,
-      "questionId": 1676228176282,
-      "date": "2023-02-12",
+      "id": 1676270381018,
+      "answer": "I think it's nice! Just go!",
+      "authorId": 1,
+      "questionId": 1676061209967,
+      "date": "2023-02-13",
       "edited": "",
-      "likedBy": [],
+      "likedBy": [
+        2
+      ],
+      "dislikedBy": []
+    },
+    {
+      "id": 1676276646497,
+      "answer": "Sveikinimai pribaigus!",
+      "authorId": 3,
+      "questionId": 1,
+      "date": "2023-02-13",
+      "edited": "",
+      "likedBy": [
+        3
+      ],
       "dislikedBy": []
     }
   ]

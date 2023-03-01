@@ -15,7 +15,7 @@ const QuestionPage = () => {
     const question = questions.find(question => question.id.toString() === id);
 
     const relevantAnswers = answers.filter(answer => answer.questionId === question.id);
-    const sortedAnswers = relevantAnswers.sort((a, b) => b.rate - a.rate);
+    const sortedAnswers = relevantAnswers.sort((a, b) => ((b.likedBy.length - b.dislikedBy.length)-(a.likedBy.length - a.dislikedBy.length)));
 
     return (
         questions?
