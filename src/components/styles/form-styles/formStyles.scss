@@ -4,25 +4,34 @@ $button: rgb(87, 112, 96);
 
 .formContainer{
     padding: 50px 20px;
-    max-height: 80vh;
-    text-align: center;
+    height: 100vh;
+    background-color: rgb(247, 253, 249);
+    .close{
+        width: 12px;
+        display: flex;
+        margin-left: auto;
+        margin-bottom: 50px;
+    }
+    label{
+        font-size: 14px;
+    }
     input{
       width: 100%;
       max-width: 400px;
-      margin: 10px auto 5px auto;
-      border-radius: 5px;
+      margin: 2px 0 20px 0;
+      border-radius: 3px;
       padding: 5px 10px;
-      font-size: 18px;
+      font-size: 16px;
       display: block;
       box-sizing: border-box;
-      border: 1px solid $mainDark;
+      border: 1px solid $mainLight;
     }
     textarea{
       width: 100%;
       max-width: 400px;
       height: 80px;
-      margin: 0 auto 20px auto;
-      border-radius: 5px;
+      margin-bottom: 20px;
+      border-radius: 3px;
       padding: 5px 10px;
       font-size: 18px;
       display: block;
@@ -32,10 +41,10 @@ $button: rgb(87, 112, 96);
     button[type=submit]{
         width: 100%;
         max-width: 400px;
-        margin-top: 40px;
-        font-weight: 700;
-        background-color: darkslategray;
-        color: white;
+        margin-top: 20px;
+        border-radius: 3px;
+        background-color: $mainLight;
+        border: none;
         padding: 10px;
         &:hover{
             cursor: pointer;
@@ -43,12 +52,32 @@ $button: rgb(87, 112, 96);
     }
     .errors{
         margin-top: 0;
+        display: block;
         font-size: 14px;
+        font-weight: 300;
         color: rgb(207, 29, 29);
-        font-weight: 500;
     }
     .notification{
+        margin-top: 0;
+        display: block;
+        font-size: 14px;
+        font-weight: 300;
         color: rgb(207, 29, 29);
-        font-weight: 500;
+    }
+    .redirectText{
+        margin: 70px auto;
+    }
+    .redirectLink{
+        text-decoration: underline;
+        margin-left: 4px;
+    }
+}
+
+@media (min-width: 600px) {
+    .formContainer{
+        padding: 100px;
+        margin: 10vh auto 0 auto;
+        width: fit-content;
+        height: fit-content;
     }
 }

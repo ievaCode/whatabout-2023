@@ -6,19 +6,19 @@ import AnswerContext from "../../../contexts/AnswerContext";
 import "./sortPanel.scss";
 
 
-const SortPanel = ({setSortedQuestions}) => {
+const SortPanel = ({sortedQuestions, setSortedQuestions}) => {
 
   const { questions } = useContext(QuestionContext);
   const { answers } = useContext(AnswerContext);
 
-  const [selectedOption, setSelectedOption] = useState("newest");
-  const [previousSort, setPreviousSort] = useState("newest");
+  const [selectedOption, setSelectedOption] = useState();
+  const [previousSort, setPreviousSort] = useState();
     
   useEffect(() => {
-    setSortedQuestions(sortedQuestions);
+    setSortedQuestions(sort);
   }, [selectedOption]);
 
-  const sortedQuestions = () => {
+  const sort = () => {
     switch (selectedOption) {
       case "newest":
         return [...questions].sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -37,31 +37,43 @@ const SortPanel = ({setSortedQuestions}) => {
               (a.likedBy.length - a.dislikedBy.length)
           );
       case "notAnswered":
-        return  [...questions].filter(question => answers.filter(answer => answer.questionId === question.id).length === 0);
+        return  [...sortedQuestions].filter(question => answers.filter(answer => answer.questionId === question.id).length === 0);
       default:
         return null;
     }
   }
   const handleFilter = () => {
     setPreviousSort(selectedOption);
+    setSelectedOption("notAnswered");
     selectedOption === "notAnswered" ? setSelectedOption(previousSort) : setSelectedOption("notAnswered"); 
   }
 
     return (
       <div className="sortPanel">
         <label className="labelSort">Sort questions by:
-          <select className={selectedOption === "notAnswered" ? "selectSort" : "selectSort active"} name="sort" id="sort" onChange = {e => setSelectedOption(e.target.value)}>
+          {/* <select className={selectedOption === "notAnswered" ? "selectSort" : "selectSort active"} name="sort" id="sort" onChange = {e => setSelectedOption(e.target.value)}> */}
+          <select 
+            className = "selectSort"
+            defaultValue="empty"
+            onChange = {e => setSelectedOption(e.target.value)}
+          >
+              <option  value = "empty" disabled></option>
               <option value="newest" >date from the newest</option>
               <option value="oldest" >date from the oldest</option>
               <option value="mostAnswered" >the number of answers</option>
               <option value="highestRate" >rate</option>
           </select>
         </label>
-        <button 
-          className =  {selectedOption === "notAnswered" ? "filterButton active" : "filterButton"} 
-          onClick = {handleFilter}> 
-          Filter not answered
-        </button>
+        {/* <label className =  {selectedOption === "notAnswered" ? "filterButton active" : "filterButton"}> */}
+        <label className = "filterButton">
+          Show only not answered ones 
+          <input 
+              type="checkbox"
+              checked = {selectedOption === "notAnswered" ? true : false}
+              onChange = {handleFilter}
+              disabled = {selectedOption === "mostAnswered" ? true : false}
+            />
+        </label>
       </div>
     )
   }

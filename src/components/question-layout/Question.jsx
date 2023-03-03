@@ -28,8 +28,8 @@ const Question = ({question}) => {
             <>
                 <div className="topSectionContainer">
                     <div className="dateContainer">
-                        <span className="date">posted: {question.date}</span>
-                        {question.edited && <span className="date edited">last edited on: {question.edited}</span>}
+                        <span className="date posted">posted: {question.date}</span>
+                        {question.edited && <span className="date edited">last edited: {question.edited}</span>}
                     </div>
                     {loggedInUser && loggedInUser.id === users.find(user => user.id === question.authorId).id ?
                         <div className="manageButtonsWrapper">

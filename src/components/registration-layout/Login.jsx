@@ -1,9 +1,10 @@
 import * as Yup from 'yup';
 import { Formik, Form, Field } from 'formik';
 import { useContext, useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import UserContext from "../../contexts/UserContext";
+import close from "../../assets/close.png"
 
 const Login = () => {
 
@@ -31,6 +32,7 @@ const Login = () => {
 
   return (
     <div className="registration formContainer">
+      <Link to='/'><img className = "close" src={close} alt="closing icon" /></Link>   
       <Formik 
         initialValues={{email: '', password: ''}}
         validationSchema={validationSchema}
@@ -39,14 +41,13 @@ const Login = () => {
         {({ errors, touched, values, setValues }) => (
           <Form>
             <div>
-              <label>Email:
+              <label>Email: </label>
                 <Field 
                   name='email'
                   value={values.email} 
                   onChange={(e)=>setValues({...values, email:e.target.value})}
                 />
                 {errors.email && touched.email ? <span className='errors'>{errors.email}</span> : null}
-              </label>
             </div>
             <div>
               <label>Password:
@@ -63,6 +64,9 @@ const Login = () => {
           </Form>
         )}
       </Formik>
+      <p className="redirectText">No account yet? You can register
+        <Link className="redirectLink" to="/register">here</Link>
+        .</p>
     </div>
   );
 }

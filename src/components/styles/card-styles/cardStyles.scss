@@ -19,6 +19,9 @@ $button: rgb(87, 112, 96);
     }
     .date{
         font-size: 12px;
+        &.posted{
+            font-weight: 500;
+        }
     }
     .manageButtonsWrapper{
         display: flex;

@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 import { Formik, Form, Field } from 'formik';
 import { useContext, useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import UserContext from "../../contexts/UserContext";
 
@@ -124,6 +124,9 @@ const Register = () => {
           </Form>
         )}
       </Formik>
+      <p className="redirectText">Already have and account? Log in
+        <Link className="redirectLink" to="/register">here</Link>
+        .</p>
     </div>
   );
 }

@@ -12,7 +12,7 @@ const QuestionList = () => {
   const { questions } = useContext(QuestionContext);
   const { answers } = useContext(AnswerContext);
   const { users, loggedInUser } = useContext(UserContext);
-  const [sortedQuestions, setSortedQuestions] = useState([]);
+  const [sortedQuestions, setSortedQuestions] = useState(questions.reverse());
 
   useEffect(() => {
     setSortedQuestions(questions);
@@ -25,7 +25,7 @@ const QuestionList = () => {
           <Link className="addNewQuestion" to="/questions/new-question"> + Ask a Question</Link> :
           <Link className="addNewQuestion" to="/login"> + Ask a Question</Link>      
         }
-        <SortPanel setSortedQuestions = {setSortedQuestions}/>
+        <SortPanel sortedQuestions = {sortedQuestions} setSortedQuestions = {setSortedQuestions}/>
       </div>
       {questions && users ?
         <div className = "questionList">
