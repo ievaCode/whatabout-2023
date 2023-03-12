@@ -1,7 +1,10 @@
 .formContainer {
+  box-sizing: border-box;
   padding: 20px;
   height: 100vh;
   background-color: rgb(247, 253, 249);
+  width: 100%;
+  margin: 0;
 }
 .formContainer .close {
   width: 12px;
@@ -14,7 +17,6 @@
 }
 .formContainer input {
   width: 100%;
-  max-width: 400px;
   margin: 2px 0 20px 0;
   border-radius: 3px;
   padding: 5px 10px;
@@ -25,19 +27,17 @@
 }
 .formContainer textarea {
   width: 100%;
-  max-width: 400px;
   height: 80px;
   margin-bottom: 20px;
   border-radius: 3px;
   padding: 5px 10px;
-  font-size: 18px;
+  font-size: 16px;
   display: block;
   box-sizing: border-box;
   border: 1px solid darkslategray;
 }
 .formContainer button[type=submit] {
   width: 100%;
-  max-width: 400px;
   margin-top: 20px;
   border-radius: 3px;
   background-color: rgb(145, 189, 162);
@@ -72,7 +72,7 @@
 @media (min-width: 600px) {
   .formContainer {
     margin: 10vh auto 0 auto;
-    width: fit-content;
     height: fit-content;
+    width: 80%;
   }
 }/*# sourceMappingURL=registrationLayoutStyles.css.map */

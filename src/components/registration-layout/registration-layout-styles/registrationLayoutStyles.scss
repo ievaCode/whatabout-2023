@@ -3,9 +3,12 @@ $mainLight: rgb(145, 189, 162);
 $button: rgb(87, 112, 96);
 
 .formContainer{
+    box-sizing: border-box;
     padding: 20px;
     height: 100vh;
     background-color: rgb(247, 253, 249);
+    width: 100%;
+    margin: 0;
     .close{
         width: 12px;
         display: flex;
@@ -17,7 +20,6 @@ $button: rgb(87, 112, 96);
     }
     input{
       width: 100%;
-      max-width: 400px;
       margin: 2px 0 20px 0;
       border-radius: 3px;
       padding: 5px 10px;
@@ -28,19 +30,17 @@ $button: rgb(87, 112, 96);
     }
     textarea{
       width: 100%;
-      max-width: 400px;
       height: 80px;
       margin-bottom: 20px;
       border-radius: 3px;
       padding: 5px 10px;
-      font-size: 18px;
+      font-size: 16px;
       display: block;
       box-sizing: border-box;
       border: 1px solid darkslategray
     }
     button[type=submit]{
         width: 100%;
-        max-width: 400px;
         margin-top: 20px;
         border-radius: 3px;
         background-color: $mainLight;
@@ -76,7 +76,7 @@ $button: rgb(87, 112, 96);
 @media (min-width: 600px) {
     .formContainer{
         margin: 10vh auto 0 auto;
-        width: fit-content;
         height: fit-content;
+        width: 80%;
     }
 }

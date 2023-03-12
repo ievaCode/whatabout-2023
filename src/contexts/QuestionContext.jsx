@@ -9,6 +9,7 @@ const QuestionProvider = ({ children }) => {
   const fetchQuestions = async () => {
     const allQuestions = await fetch('http://localhost:5000/questions')
       .then(res => res.json());
+      allQuestions.sort((a, b) => new Date(b.date) - new Date(a.date))
     setQuestions(allQuestions);
   }
   useEffect(()=>{

@@ -54,11 +54,11 @@ const SortPanel = ({sortedQuestions, setSortedQuestions}) => {
           {/* <select className={selectedOption === "notAnswered" ? "selectSort" : "selectSort active"} name="sort" id="sort" onChange = {e => setSelectedOption(e.target.value)}> */}
           <select 
             className = "selectSort"
-            defaultValue="empty"
+            defaultValue="newests"
             onChange = {e => setSelectedOption(e.target.value)}
           >
-              <option value="oldest" >date from the oldest</option>
               <option value="newest" >date from the newest</option>
+              <option value="oldest" >date from the oldest</option>
               <option value="mostAnswered" >the number of answers</option>
               <option value="highestRate" >rate</option>
           </select>

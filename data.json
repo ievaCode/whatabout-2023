@@ -71,7 +71,8 @@
         3,
         1675885991700,
         1675889912289,
-        1
+        1,
+        1676276923639
       ],
       "dislikedBy": [
         5
@@ -193,6 +194,60 @@
         1675889912289
       ],
       "dislikedBy": []
+    },
+    {
+      "id": 1678613086660,
+      "question": "What do you think about this spring?",
+      "explanation": "Is it comming or no?",
+      "authorId": 1676276923639,
+      "date": "2023-03-12",
+      "edited": "",
+      "likedBy": [],
+      "dislikedBy": []
+    },
+    {
+      "id": 1678613762628,
+      "question": "Number of sunshine hours in Vilnius?",
+      "explanation": "Planning to go there in January...",
+      "authorId": 1676276923639,
+      "date": "2023-03-12",
+      "edited": "",
+      "likedBy": [
+        1676276923639
+      ],
+      "dislikedBy": []
+    },
+    {
+      "id": 1678614099552,
+      "question": "Where to get skiis in Vilnius?",
+      "explanation": "",
+      "authorId": 1676276923639,
+      "date": "2023-03-12",
+      "edited": "",
+      "likedBy": [],
+      "dislikedBy": []
+    },
+    {
+      "id": 1678615424851,
+      "question": "When should we change time to summer time?",
+      "explanation": "",
+      "authorId": 2,
+      "date": "2023-03-12",
+      "edited": "",
+      "likedBy": [],
+      "dislikedBy": []
+    },
+    {
+      "id": 1678615562004,
+      "question": "How about the order of questions when a new is added?",
+      "explanation": "",
+      "authorId": 2,
+      "date": "2023-03-12",
+      "edited": "",
+      "likedBy": [
+        2
+      ],
+      "dislikedBy": []
     }
   ],
   "answers": [
@@ -285,7 +340,8 @@
       "likedBy": [
         3,
         1675889912289,
-        2
+        2,
+        1676276923639
       ],
       "dislikedBy": []
     },
