@@ -1,4 +1,4 @@
-import "../styles/form-styles/formStyles.scss"
+import "./registration-layout-styles/registrationLayoutStyles.scss"
 
 import { Outlet } from "react-router-dom";
 

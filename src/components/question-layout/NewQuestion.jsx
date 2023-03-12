@@ -9,7 +9,7 @@ import QuestionContext from "../../contexts/QuestionContext";
 const NewQuestion = () => {
 
     const { loggedInUser } = useContext(UserContext);
-    const { questions, addNewQuestion, deleteQuestion, editQuestion } = useContext(QuestionContext);
+    const { addNewQuestion } = useContext(QuestionContext);
     
     const navigation = useNavigate();
 

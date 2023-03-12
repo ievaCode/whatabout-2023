@@ -37,14 +37,10 @@
     },
     {
       "id": 1676276923639,
-      "username": "Dom",
-      "email": "domasd@domas.lt",
-      "password": "domas1234",
-      "imageUrl": "https://e7.pngegg.com/pngimages/308/63/png-clipart-bear-head-creative-head-cartoon-avatar.png",
-      "likedQuestionIds": [],
-      "dislikedQuestionIds": [],
-      "likedAnswerIds": [],
-      "dislikedAnswerIds": []
+      "username": "Lukas",
+      "email": "lukas@lukas.lt",
+      "password": "lukas1234",
+      "imageUrl": "https://e7.pngegg.com/pngimages/308/63/png-clipart-bear-head-creative-head-cartoon-avatar.png"
     }
   ],
   "questions": [
@@ -57,7 +53,9 @@
       "edited": "2023-02-11",
       "likedBy": [
         4,
-        1
+        1,
+        2,
+        1675889912289
       ],
       "dislikedBy": []
     },
@@ -69,11 +67,12 @@
       "date": "2023-02-09",
       "edited": "2023-02-12",
       "likedBy": [
-        2,
         4,
-        1,
         3,
-        1675885991700
+        1675885991700,
+        1675889912289,
+        1,
+        1676276923639
       ],
       "dislikedBy": [
         5
@@ -88,9 +87,8 @@
       "edited": "",
       "likedBy": [
         3,
-        2,
         1675885991700,
-        1675889912289
+        1
       ],
       "dislikedBy": []
     },
@@ -114,8 +112,9 @@
       "date": "2023-02-12",
       "edited": "",
       "likedBy": [
-        2,
-        3
+        3,
+        1675889912289,
+        2
       ],
       "dislikedBy": [
         1
@@ -143,6 +142,7 @@
       "edited": "",
       "likedBy": [],
       "dislikedBy": [
+        1,
         3
       ]
     },
@@ -163,7 +163,12 @@
       "authorId": 1,
       "date": "2023-02-28",
       "edited": "",
-      "likedBy": [],
+      "likedBy": [
+        1,
+        3,
+        1675885991700,
+        1675889912289
+      ],
       "dislikedBy": []
     },
     {
@@ -183,7 +188,65 @@
       "authorId": 1675885991700,
       "date": "2023-02-28",
       "edited": "",
+      "likedBy": [
+        1,
+        2,
+        1675889912289
+      ],
+      "dislikedBy": []
+    },
+    {
+      "id": 1678613086660,
+      "question": "What do you think about this spring?",
+      "explanation": "Is it comming or no?",
+      "authorId": 1676276923639,
+      "date": "2023-03-12",
+      "edited": "",
       "likedBy": [],
+      "dislikedBy": []
+    },
+    {
+      "id": 1678613762628,
+      "question": "Number of sunshine hours in Vilnius?",
+      "explanation": "Planning to go there in January...",
+      "authorId": 1676276923639,
+      "date": "2023-03-12",
+      "edited": "",
+      "likedBy": [
+        1676276923639
+      ],
+      "dislikedBy": []
+    },
+    {
+      "id": 1678614099552,
+      "question": "Where to get skiis in Vilnius?",
+      "explanation": "",
+      "authorId": 1676276923639,
+      "date": "2023-03-12",
+      "edited": "",
+      "likedBy": [],
+      "dislikedBy": []
+    },
+    {
+      "id": 1678615424851,
+      "question": "When should we change time to summer time?",
+      "explanation": "",
+      "authorId": 2,
+      "date": "2023-03-12",
+      "edited": "",
+      "likedBy": [],
+      "dislikedBy": []
+    },
+    {
+      "id": 1678615562004,
+      "question": "How about the order of questions when a new is added?",
+      "explanation": "",
+      "authorId": 2,
+      "date": "2023-03-12",
+      "edited": "",
+      "likedBy": [
+        2
+      ],
       "dislikedBy": []
     }
   ],
@@ -223,8 +286,7 @@
       "date": "2023-02-09",
       "edited": "2023-02-13",
       "likedBy": [
-        2,
-        1
+        2
       ],
       "dislikedBy": [
         3
@@ -248,7 +310,9 @@
       "date": "2023-02-12",
       "edited": "",
       "likedBy": [
-        3
+        3,
+        2,
+        1675885991700
       ],
       "dislikedBy": []
     },
@@ -260,7 +324,9 @@
       "date": "2023-02-13",
       "edited": "",
       "likedBy": [
-        2
+        2,
+        3,
+        1675889912289
       ],
       "dislikedBy": []
     },
@@ -272,7 +338,73 @@
       "date": "2023-02-13",
       "edited": "",
       "likedBy": [
+        3,
+        1675889912289,
+        2,
+        1676276923639
+      ],
+      "dislikedBy": []
+    },
+    {
+      "id": 1678453203888,
+      "answer": "Not so much, in my oppinion",
+      "authorId": 1675885991700,
+      "questionId": 1676252472652,
+      "date": "2023-03-10",
+      "edited": "",
+      "likedBy": [
+        2
+      ],
+      "dislikedBy": []
+    },
+    {
+      "id": 1678453278371,
+      "answer": "Well, it did not work before, but not it seems to work.",
+      "authorId": 1675885991700,
+      "questionId": 1677604011919,
+      "date": "2023-03-10",
+      "edited": "",
+      "likedBy": [
+        2,
+        1
+      ],
+      "dislikedBy": []
+    },
+    {
+      "id": 1678456746775,
+      "answer": "It works. Just it's unclear if the sorting should be kept, when new question or answer is added.",
+      "authorId": 1675885991700,
+      "questionId": 1677604011919,
+      "date": "2023-03-10",
+      "edited": "",
+      "likedBy": [],
+      "dislikedBy": [
         3
+      ]
+    },
+    {
+      "id": 1678457185363,
+      "answer": "Yes, sorting does work. But I guess there are some issues with navigation..",
+      "authorId": 3,
+      "questionId": 1677604011919,
+      "date": "2023-03-10",
+      "edited": "",
+      "likedBy": [
+        3,
+        1675885991700,
+        1675889912289
+      ],
+      "dislikedBy": []
+    },
+    {
+      "id": 1678533993999,
+      "answer": "It works. But let's think about style...",
+      "authorId": 1,
+      "questionId": 1676228176282,
+      "date": "2023-03-11",
+      "edited": "",
+      "likedBy": [
+        2
       ],
       "dislikedBy": []
     }

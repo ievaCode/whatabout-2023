@@ -4,7 +4,9 @@ const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
 
-  const [loggedInUser, setLoggedInUser] = useState();
+  
+  const loggedinUserState  = sessionStorage? JSON.parse(sessionStorage.getItem('currentUser')) : null;
+  const [loggedInUser, setLoggedInUser] = useState(loggedinUserState);
   const [users, setUsers] = useState();
 
 

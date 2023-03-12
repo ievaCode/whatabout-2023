@@ -1,0 +1,42 @@
+.homePageContainer {
+  padding: 20px 10px;
+  box-sizing: border-box;
+}
+.homePageContainer .actionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.homePageContainer .addNewQuestion {
+  margin-left: auto;
+  font-size: 18px;
+  font-weight: 600;
+}
+.homePageContainer .questionList, .homePageContainer .answerList {
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  box-sizing: border-box;
+}
+.homePageContainer .answerList {
+  margin-top: 70px;
+}
+.homePageContainer .up {
+  padding: 6px;
+  background-color: rgb(145, 189, 162);
+  color: rgb(145, 189, 162);
+  width: 24px;
+  border-radius: 2px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 5;
+}
+
+@media (min-width: 600px) {
+  .homePageContainer {
+    width: 80%;
+    margin: auto;
+  }
+}/*# sourceMappingURL=questionLayoutStyles.css.map */

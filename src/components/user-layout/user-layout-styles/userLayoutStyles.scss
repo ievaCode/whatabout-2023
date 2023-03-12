@@ -1,0 +1,25 @@
+.userInfoCard{
+   box-sizing: border-box;
+   display: flex;
+ .userImage{
+   width: 160px;
+   height: auto;
+ }
+ .userData{
+   padding: 10px;
+ }
+ .userTag{
+   font-weight: 600;
+   margin-right: 4px;
+ }
+ .userName{
+   margin-bottom: 10px;
+ }
+}
+
+@media (min-width: 600px) {
+   .userInfoCard{
+       width: 80%;
+       margin: auto;            
+   }
+}

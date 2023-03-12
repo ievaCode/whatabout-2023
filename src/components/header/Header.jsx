@@ -6,7 +6,7 @@ import UserRegistration from './UserRegistration';
 import PublicRegistration from './PublicRegistration';
 import UserNavigation from './UserNavigation';
 
-import "../styles/header-style/header.scss"
+import "./header-styles/header.scss"
 
 const Header = () => {
 

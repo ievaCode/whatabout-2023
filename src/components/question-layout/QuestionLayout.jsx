@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 import Header from "../header/Header"
 
-import "../styles/layout-styles/layoutStyles.scss"
+import "./question-layout-styles/questionLayoutStyles.scss"
 
 const QuestionLayout = () => {
 

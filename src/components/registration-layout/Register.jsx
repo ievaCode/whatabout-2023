@@ -1,9 +1,10 @@
 import * as Yup from 'yup';
 import { Formik, Form, Field } from 'formik';
 import { useContext, useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import UserContext from "../../contexts/UserContext";
+import close from "../../assets/close.png"
 
 const Register = () => {
 
@@ -33,7 +34,8 @@ const Register = () => {
       setUsers([...users, newUser]);
       post(newUser);
       setLoggedInUser(newUser);
-      navigation('/questions');
+      sessionStorage.setItem('currentUser', JSON.stringify(newUser));
+      navigation(-1);
     }
   }
 
@@ -56,6 +58,7 @@ const Register = () => {
 
   return (
     <div className="registration formContainer">
+      <Link to='/'><img className = "close" src={close} alt="closing icon" /></Link> 
       <Formik initialValues={{
           email: '',
           username: '',
@@ -124,6 +127,9 @@ const Register = () => {
           </Form>
         )}
       </Formik>
+      <p className="redirectText">Already have and account? Log in
+        <Link className="redirectLink" to="/login">here</Link>
+        .</p>
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 
 import NotFound from "./components/NotFound";
-import MyZone from "./components/my-zone/MyZone";
+import UserLayout from "./components/user-layout/UserLayout";
 import QuestionLayout from "./components/question-layout/QuestionLayout";
-import HomePage from "./components/question-layout/HomePage";
-import QuestionPage from "./components/question-layout/QuestionPage";
+import QuestionList from "./components/question-layout/QuestionList";
+import Question from "./components/question-layout/Question";
 import NewQuestion from "./components/question-layout/NewQuestion";
 import EditQuestion from "./components/question-layout/EditQuestion";
 import NewAnswer from "./components/question-layout/NewAnswer";
@@ -21,15 +21,15 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<QuestionLayout />}>
-        <Route index element={<HomePage />} />
-        <Route path="/questions" element={<HomePage />} />
-        <Route path="/questions/:id" element={<QuestionPage />} />
+        <Route index element={<QuestionList />} />
+        <Route path="/questions" element={<QuestionList />} />
+        <Route path="/questions/:id" element={<Question />} />
         <Route path="/questions/new-question" element={<NewQuestion />} />
         <Route path="/questions/edit-question/:id" element={<EditQuestion />} />
         <Route path="/questions/:questionId/new-answer" element={<NewAnswer />} />
         <Route path="/questions/edit-answer/:id" element={<EditAnswer />} />
       </Route>
-      <Route path="/my-zone/:id" element={<MyZone />} />
+      <Route path="/user/:id" element={<UserLayout />} />
       <Route element={<RegistrationLayout />}>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
