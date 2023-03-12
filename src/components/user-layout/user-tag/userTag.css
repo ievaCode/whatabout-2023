@@ -1,0 +1,15 @@
+.userTag {
+  width: fit-content;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.userTag .avatar {
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+}
+.userTag .username {
+  font-size: 12px;
+  font-weight: 600;
+}/*# sourceMappingURL=userTag.css.map */

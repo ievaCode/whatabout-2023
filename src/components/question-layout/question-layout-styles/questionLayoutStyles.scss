@@ -1,0 +1,47 @@
+$mainDark:  rgb(58, 77, 65);
+$mainLight: rgb(145, 189, 162);
+$button: rgb(87, 112, 96);
+
+.homePageContainer{
+    padding: 20px 10px;
+    box-sizing: border-box;
+    .actionContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 10px
+    }
+    .addNewQuestion{
+        margin-left: auto;
+        font-size: 18px;
+        font-weight: 600;
+    }    
+    .questionList, .answerList{
+        margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        box-sizing: border-box;
+    }
+    .answerList{
+        margin-top: 70px;
+    }
+    .up{
+        padding: 6px;
+        background-color: $mainLight;
+        color: $mainLight;
+        width: 24px;
+        border-radius: 2px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 5;
+    }
+}
+
+
+@media (min-width: 600px) {
+    .homePageContainer{
+        width: 80%;
+        margin: auto;            
+    }
+}

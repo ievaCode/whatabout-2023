@@ -1,0 +1,25 @@
+.userInfoCard {
+  box-sizing: border-box;
+  display: flex;
+}
+.userInfoCard .userImage {
+  width: 160px;
+  height: auto;
+}
+.userInfoCard .userData {
+  padding: 10px;
+}
+.userInfoCard .userTag {
+  font-weight: 600;
+  margin-right: 4px;
+}
+.userInfoCard .userName {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 600px) {
+  .userInfoCard {
+    width: 80%;
+    margin: auto;
+  }
+}/*# sourceMappingURL=userLayoutStyles.css.map */

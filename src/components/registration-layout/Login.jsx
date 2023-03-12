@@ -17,7 +17,8 @@ const Login = () => {
     const existingUser= users.find(user => user.email === values.email && user.password === values.password);
     if (existingUser){
         setLoggedInUser(existingUser);
-        navigation('/questions');
+        sessionStorage.setItem('currentUser', JSON.stringify(existingUser));
+        navigation(-1);
       } else {
       setCorrectLogin(false);
     };    

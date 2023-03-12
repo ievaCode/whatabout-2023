@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import UserContext from "../../contexts/UserContext";
 
-import UserCard from "../molecules/user-card/UserCard";
+import UserTag from "../user-layout/user-tag/UserTag";
 
 
 const UserLoginMenu = () => {
@@ -14,14 +14,15 @@ const UserLoginMenu = () => {
 
   const logOutUser = () => {
     setLoggedInUser(null);
+    sessionStorage.clear();
     window.location.reload();
     navigation('/questions');
   }
 
   return (
     <div className="registration userRegistration">     
-      <Link to={`/my-zone/${loggedInUser.id}`}>
-        <UserCard userData = {loggedInUser} />
+      <Link to={`/user/${loggedInUser.id}`}>
+        <UserTag userData = {loggedInUser} />
       </Link>
       <div className="registrationButton loginButton" onClick={() => logOutUser()}>
           <Link to='/questions'>Log out</Link>

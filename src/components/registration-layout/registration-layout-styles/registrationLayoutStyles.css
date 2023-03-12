@@ -1,0 +1,78 @@
+.formContainer {
+  padding: 20px;
+  height: 100vh;
+  background-color: rgb(247, 253, 249);
+}
+.formContainer .close {
+  width: 12px;
+  display: flex;
+  margin-left: auto;
+  margin-bottom: 50px;
+}
+.formContainer label {
+  font-size: 14px;
+}
+.formContainer input {
+  width: 100%;
+  max-width: 400px;
+  margin: 2px 0 20px 0;
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-size: 16px;
+  display: block;
+  box-sizing: border-box;
+  border: 1px solid rgb(145, 189, 162);
+}
+.formContainer textarea {
+  width: 100%;
+  max-width: 400px;
+  height: 80px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-size: 18px;
+  display: block;
+  box-sizing: border-box;
+  border: 1px solid darkslategray;
+}
+.formContainer button[type=submit] {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+  border-radius: 3px;
+  background-color: rgb(145, 189, 162);
+  border: none;
+  padding: 10px;
+}
+.formContainer button[type=submit]:hover {
+  cursor: pointer;
+}
+.formContainer .errors {
+  margin-top: 0;
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+  color: rgb(207, 29, 29);
+}
+.formContainer .notification {
+  margin-top: 0;
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+  color: rgb(207, 29, 29);
+}
+.formContainer .redirectText {
+  margin: 70px auto;
+}
+.formContainer .redirectLink {
+  text-decoration: underline;
+  margin-left: 4px;
+}
+
+@media (min-width: 600px) {
+  .formContainer {
+    margin: 10vh auto 0 auto;
+    width: fit-content;
+    height: fit-content;
+  }
+}/*# sourceMappingURL=registrationLayoutStyles.css.map */

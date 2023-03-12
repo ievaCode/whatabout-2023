@@ -9,7 +9,7 @@ const UserNavigation = () => {
 
   return (
     <>
-      <Link to={`/my-zone/${loggedInUser.id}`}>My zone</Link>
+      <Link to={`/user/${loggedInUser.id}`}>My zone</Link>
     </>
   );
 }

@@ -6,12 +6,11 @@ import { Formik, Form, Field } from 'formik';
 import UserContext from "../../contexts/UserContext";
 import AnswerContext from "../../contexts/AnswerContext";
 
-import "../styles/form-styles/formStyles.scss"
 
 const NewAnswer = () => {
 
     const { loggedInUser } = useContext(UserContext);
-    const { answers, addNewAnswer } = useContext(AnswerContext);
+    const { addNewAnswer } = useContext(AnswerContext);
     
     let { questionId } = useParams();
     const navigation = useNavigate();
@@ -31,7 +30,8 @@ const NewAnswer = () => {
           dislikedBy: []
         };
         addNewAnswer(newAnswer);
-        navigation(-1);
+        navigation(`/questions/${questionId}`);
+        
       }
   
     const validationSchema = Yup.object().shape({
