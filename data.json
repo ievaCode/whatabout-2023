@@ -202,7 +202,10 @@
       "authorId": 1676276923639,
       "date": "2023-03-12",
       "edited": "",
-      "likedBy": [],
+      "likedBy": [
+        1,
+        2
+      ],
       "dislikedBy": []
     },
     {
@@ -402,6 +405,18 @@
       "authorId": 1,
       "questionId": 1676228176282,
       "date": "2023-03-11",
+      "edited": "",
+      "likedBy": [
+        2
+      ],
+      "dislikedBy": []
+    },
+    {
+      "id": 1681681164719,
+      "answer": "What do you mean? I think it's a very nice spring. The grass is olmost green. ",
+      "authorId": 1,
+      "questionId": 1678613086660,
+      "date": "2023-04-16",
       "edited": "",
       "likedBy": [
         2
