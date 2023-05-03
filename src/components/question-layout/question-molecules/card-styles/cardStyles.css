@@ -20,21 +20,6 @@
 .card .date.posted {
   font-weight: 500;
 }
-.card .manageButtonsWrapper {
-  display: flex;
-  gap: 10px;
-}
-.card .editButton, .card .deleteButton {
-  background-color: rgb(94, 94, 94);
-  color: white;
-  border: 1px solid rgb(58, 77, 65);
-  width: fit-content;
-  height: fit-content;
-  padding: 3px 5px;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 5px;
-}
 .card .mainSectionContainer {
   display: flex;
   width: 100%;

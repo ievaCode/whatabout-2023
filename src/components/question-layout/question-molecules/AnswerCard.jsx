@@ -4,7 +4,7 @@ import AnswerContext from "../../../contexts/AnswerContext";
 import UserContext from "../../../contexts/UserContext";
 import UserTag from "../../user-layout/user-tag/UserTag";
 import LikeCount from "../../question-layout/question-molecules/like-count/LikeCount";
-
+import ManageBlock from "../../molecules/ManageBlock";
 
 const AnswerCard = ({answer, tagNumber}) => {
 
@@ -22,12 +22,10 @@ const AnswerCard = ({answer, tagNumber}) => {
                     {answer.edited && <span className="date edited">last edited on: {answer.edited}</span>}
                 </div>
                 {loggedInUser && loggedInUser.id === users.find(user => user.id === answer.authorId).id ?
-                    <div className="manageButtonsWrapper">
-                        <div className="button editButton">
-                            <Link to={`/questions/edit-answer/${answer.id}`}>Edit</Link>
-                        </div>
-                        <button className="button deleteButton" onClick = {()=>deleteAnswer(answer.id)}>Delete</button>          
-                    </div>  :
+                    <ManageBlock 
+                        editLink={`/questions/edit-answer/${answer.id}`}
+                        deleteAction={()=>deleteAnswer(answer.id)}
+                    />   :
                     <UserTag userData = {users.find(user => user.id === answer.authorId)}/>      
                 }    
             </div>

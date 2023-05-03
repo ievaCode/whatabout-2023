@@ -20,10 +20,8 @@ const UserLoginMenu = () => {
   }
 
   return (
-    <div className="registration userRegistration">     
-      <Link to={`/user/${loggedInUser.id}`}>
-        <UserTag userData = {loggedInUser} />
-      </Link>
+    <div className="registration userRegistration">   
+      <UserTag userData = {loggedInUser} />
       <div className="registrationButton loginButton" onClick={() => logOutUser()}>
           <Link to='/questions'>Log out</Link>
       </div>

@@ -37,11 +37,8 @@ const NewAnswer = () => {
     const validationSchema = Yup.object().shape({
       answer: Yup.string()
         .min(15, 'Your answer should be at least 15 characters long.')
-        .max(100, 'Your answer can be maximum 100 characters long. You can always add a more detailed explanation to the explanation textbox.')
-        .required('This field must be filled.'),        
-      explanation: Yup.string()
-        .min(15,'Your explanation should be at least 15 symbols length.')
-        .max(500, 'Your answer can be maximum 500 symbols length.')
+        .max(100, 'Your answer can be maximum 300 characters long. You can always add a more detailed explanation to the explanation textbox.')
+        .required('This field must be filled.')
     });
 
     return ( 

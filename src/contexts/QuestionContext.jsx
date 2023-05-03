@@ -1,5 +1,7 @@
 import { createContext, useState, useEffect, useContext } from "react";
 
+import { serverPort } from '../config';
+
 const QuestionContext = createContext();
 
 const QuestionProvider = ({ children }) => {
@@ -7,7 +9,7 @@ const QuestionProvider = ({ children }) => {
   const [questions, setQuestions] = useState([]);
 
   const fetchQuestions = async () => {
-    const allQuestions = await fetch('http://localhost:5000/questions')
+    const allQuestions = await fetch(`http://localhost:${serverPort}/questions`)
       .then(res => res.json());
       allQuestions.sort((a, b) => new Date(b.date) - new Date(a.date))
     setQuestions(allQuestions);
@@ -19,19 +21,19 @@ const QuestionProvider = ({ children }) => {
 
 // CRUD functions
   let post = (data) => {
-    fetch('http://localhost:5000/questions', {
+    fetch(`http://localhost:${serverPort}/questions`, {
       method: "POST",
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify(data)
     })
   }
   let remove = (id) => {
-    fetch(`http://localhost:5000/questions/${id}`, {
+    fetch(`http://localhost:${serverPort}/questions/${id}`, {
       method: "DELETE"
     })
   }
   let updateWithPATCH = (id, newData) => { 
-    fetch(`http://localhost:5000/questions/${id}`, {
+    fetch(`http://localhost:${serverPort}/questions/${id}`, {
       method: "PATCH",
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify(newData)

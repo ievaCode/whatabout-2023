@@ -12,6 +12,7 @@ import EditAnswer from "./components/question-layout/EditAnswer";
 import RegistrationLayout from "./components/registration-layout/RegistrationLayout";
 import Login from "./components/registration-layout/Login";
 import Register from "./components/registration-layout/Register";
+import EditUser from "./components/registration-layout/EditUser";
 
 
 import './App.css';
@@ -33,6 +34,7 @@ function App() {
       <Route element={<RegistrationLayout />}>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/edit-user/:id" element={<EditUser />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

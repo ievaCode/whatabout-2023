@@ -23,21 +23,21 @@ $button: rgb(87, 112, 96);
             font-weight: 500;
         }
     }
-    .manageButtonsWrapper{
-        display: flex;
-        gap: 10px;
-    }
-    .editButton, .deleteButton{
-        background-color: rgb(94, 94, 94);
-        color: white;
-        border: 1px solid $mainDark;
-        width: fit-content;
-        height: fit-content;
-        padding: 3px 5px;
-        font-size: 14px;
-        font-weight: 500;
-        border-radius: 5px;
-    }
+    // .manageButtonsWrapper{
+    //     display: flex;
+    //     gap: 10px;
+    // }
+    // .editButton, .deleteButton{
+    //     background-color: rgb(94, 94, 94);
+    //     color: white;
+    //     border: 1px solid $mainDark;
+    //     width: fit-content;
+    //     height: fit-content;
+    //     padding: 3px 5px;
+    //     font-size: 14px;
+    //     font-weight: 500;
+    //     border-radius: 5px;
+    // }
     .mainSectionContainer{
         display: flex;
         width: 100%;

@@ -1,5 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 
+import { serverPort } from '../../../../config';
+
 import UserContext from "../../../../contexts/UserContext";
 
 import like from "../../../../assets/like.png";
@@ -22,8 +24,8 @@ const LikeCount = ({item, action, type}) => {
     useEffect(() => {
         const fetchItem = async () => {
             const response = (type === "question"? 
-          await fetch(`http://localhost:5000/questions/${item.id}`) :
-          await fetch(`http://localhost:5000/answers/${item.id}`));
+          await fetch(`http://localhost:${serverPort}/questions/${item.id}`) :
+          await fetch(`http://localhost:${serverPort}/answers/${item.id}`));
           const data = await response.json();
           setLiked(data.likedBy.includes(loggedInUser.id));
           setDisliked(data.dislikedBy.includes(loggedInUser.id));

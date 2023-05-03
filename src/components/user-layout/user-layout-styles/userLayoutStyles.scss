@@ -1,12 +1,16 @@
 .userInfoCard{
    box-sizing: border-box;
    display: flex;
- .userImage{
-   width: 160px;
-   height: auto;
- }
+  .imageWrapper{
+    position: relative;
+  }
+  .userImage{
+    width: 160px;
+    height: auto;
+  }
  .userData{
    padding: 10px;
+   width: 100%;
  }
  .userTag{
    font-weight: 600;

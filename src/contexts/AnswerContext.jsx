@@ -1,5 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 
+import { serverPort } from '../config';
+
 const AnswerContext = createContext();
 
 const AnswerProvider = ({ children }) => {
@@ -7,7 +9,7 @@ const AnswerProvider = ({ children }) => {
   const [answers, setAnswers] = useState([]);
 
   const fetchAnswers = async () => {
-    const allAnswers = await fetch('http://localhost:5000/answers')
+    const allAnswers = await fetch(`http://localhost:${serverPort}/answers`)
       .then(res => res.json());
     setAnswers(allAnswers);
   }
@@ -18,19 +20,19 @@ const AnswerProvider = ({ children }) => {
 
 // CRUD functions
   let post = (data) => {
-    fetch('http://localhost:5000/answers', {
+    fetch(`http://localhost:${serverPort}/answers`, {
       method: "POST",
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify(data)
     })
   }
   let remove = (id) => {
-    fetch(`http://localhost:5000/answers/${id}`, {
+    fetch(`http://localhost:${serverPort}/answers/${id}`, {
       method: "DELETE"
     })
   }
   let updateWithPATCH = (id, newData) => { 
-    fetch(`http://localhost:5000/answers/${id}`, {
+    fetch(`http://localhost:${serverPort}/answers/${id}`, {
       method: "PATCH",
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify(newData)
