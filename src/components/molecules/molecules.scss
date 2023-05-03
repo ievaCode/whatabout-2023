@@ -1,0 +1,39 @@
+$mainDark:  rgb(58, 77, 65);
+$mainLight: rgb(145, 189, 162);
+$button: rgb(87, 112, 96);
+
+
+.manageButtonsWrapper{
+    display: flex;
+    gap: 10px;
+    .editButton, .deleteButton{
+        background-color: rgb(94, 94, 94);
+        color: white;
+        border: 1px solid $mainDark;
+        width: fit-content;
+        height: fit-content;
+        padding: 3px 5px;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 5px;
+    }
+};
+
+.userInfoCard .manageButtonsWrapper{
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.iconBorder{
+    width: 22px;
+    height: 22px;
+    border: 1px solid black;
+    border-radius: 10%;
+    text-align: center;
+    padding: 1px;
+    .editIcon{
+        width: 20px;
+        height: auto;
+        color: white;
+      }
+}

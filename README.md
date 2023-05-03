@@ -1,12 +1,14 @@
 # Running this project
 
-<p>Make a copy of the project to your machine.</p>
+Make a copy of the project to your machine.
 
-<p>Open terminal (and be sure to navigate to this project).</p>
+Open terminal (and be sure to navigate to this project).
 
-<p>Run: npm install</p>
+Run: npm install
 
-<p>Run: npm run dev</p>
-<p>If server port (5000) is busy, choose another one. In that case you need to change config.js serverPort to whichever you have chosen.</p>
+To start a server open a separate terminal and run: npm run server
+If port 5000 is busy, choose another one and configure file config.js
 
-<p>You are ready to go!</p>
+In your main terminal run: npm start
+
+You are ready to go!

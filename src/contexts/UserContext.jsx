@@ -52,6 +52,23 @@ const UserProvider = ({ children }) => {
     .then(data => console.log(data));
   }
 
+  //onClick and other functions
+  const addNewUser = (newUser) => {
+    setUsers([newUser, ...users]);
+    post(newUser);
+  }  
+
+  const deleteUser = (id) => {
+    // remove(id);
+    // setUsers(users.filter(user => user.id !== id));
+  }
+
+  const updateUser = (id, updatedUser) => {
+    updateWithPATCH(id, updatedUser);
+    setUsers(users.map(user => user.id.toString() === id ? {...user, ...updatedUser} : user));
+  }
+
+
   return (
     <UserContext.Provider
       value={{
@@ -59,7 +76,9 @@ const UserProvider = ({ children }) => {
         setUsers,
         loggedInUser,
         setLoggedInUser,
-        post,
+        addNewUser,
+        deleteUser,
+        updateUser
       }}
     >
       {children}
